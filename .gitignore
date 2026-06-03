@@ -1,0 +1,5 @@
+Firmware/components/greeting/CMakeLists.txt
+Firmware/components/greeting/greeting.cpp
+Firmware/components/greeting/include/greeting.h
+Firmware/components/greeting/test/CMakeLists.txt
+Firmware/components/greeting/test/test_greeting.cpp
