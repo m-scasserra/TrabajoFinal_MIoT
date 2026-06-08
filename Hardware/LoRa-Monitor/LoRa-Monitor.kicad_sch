@@ -6,7 +6,7 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 59.69 109.22)
+		(at 69.215 40.64)
 		(size 35.56 16.51)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22,7 +22,7 @@
 		)
 		(uuid "4bfcf40f-13fb-431f-9856-44eb253b594c")
 		(property "Sheetname" "MCU"
-			(at 59.69 108.5084 0)
+			(at 69.215 39.9284 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -33,7 +33,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 59.69 126.3146 0)
+			(at 69.215 57.7346 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -98,7 +98,7 @@
 		)
 	)
 	(sheet
-		(at 137.16 104.775)
+		(at 31.75 20.955)
 		(size 57.785 17.145)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -114,7 +114,7 @@
 		)
 		(uuid "e98113b5-abe6-4cd1-ae05-96bff57301ff")
 		(property "Sheetname" "Power supply"
-			(at 137.16 104.0634 0)
+			(at 31.75 20.2434 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -125,7 +125,7 @@
 			)
 		)
 		(property "Sheetfile" "PowerSupply.kicad_sch"
-			(at 137.16 122.5046 0)
+			(at 31.75 38.6846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -179,6 +179,146 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "PULSE_IN2+" input
+			(at 48.26 69.85 90)
+			(uuid "bb6b6413-e5e9-47ff-b8f3-03d32b5e0d0b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN2-" input
+			(at 49.8793 69.85 90)
+			(uuid "6cd96492-a14f-4de4-a249-476d04d6defd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN3+" input
+			(at 51.4986 69.85 90)
+			(uuid "2e234403-a5fb-47ac-aaab-8190751ccbca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN3-" input
+			(at 53.1179 69.85 90)
+			(uuid "48953d41-ff95-457c-bf3e-fb3da224e451")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RXD_485" output
+			(at 54.7372 69.85 90)
+			(uuid "b0f6c4ae-aad6-4d56-a4dd-1a8588de7c79")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "EN_485" input
+			(at 56.3565 69.85 90)
+			(uuid "1aaf17dd-9088-4442-88f5-578a1f935f7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN1_3V3" output
+			(at 57.9758 69.85 90)
+			(uuid "6c66c0ed-7b64-4ea3-afb2-686317714b3c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN3_3V3" output
+			(at 59.5951 69.85 90)
+			(uuid "6d40266e-1cc4-485a-a8d3-c257750effef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN2_3V3" output
+			(at 61.2144 69.85 90)
+			(uuid "c67b68ca-dbd9-4d7a-a54b-143858644c87")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TXD_485" input
+			(at 62.8337 69.85 90)
+			(uuid "763fe985-40de-43e5-9b8e-81dce10f1235")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "485_A" bidirectional
+			(at 64.453 69.85 90)
+			(uuid "6b3072eb-d5ba-48d7-9863-d9f24abdcef5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "485_B" bidirectional
+			(at 80.01 85.09 0)
+			(uuid "a8cff4b4-95f8-4b1b-be5d-2f78ba614ef3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_IN1+" input
+			(at 48.26 77.5578 180)
+			(uuid "ade6f91b-114d-4ba1-80a1-9b273d818aa9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PULSE_IN1-" input
+			(at 61.7736 69.85 90)
+			(uuid "bccb40d0-fe8e-4c96-9b12-6815bdcb3f37")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
