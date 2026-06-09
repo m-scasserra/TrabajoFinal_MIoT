@@ -4342,7 +4342,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "05e641d2-957f-4e71-9430-816f9c4b97c6")
-		(property "Reference" "R4"
+		(property "Reference" "R24"
 			(at 82.55 121.9199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4406,7 +4406,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R4")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -4424,7 +4424,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "07d9267a-bc82-4ab7-9a36-e7b1b6ccc4de")
-		(property "Reference" "R10"
+		(property "Reference" "R29"
 			(at 254 55.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4488,7 +4488,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R10")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -4506,7 +4506,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b7a34b4-63c4-4d93-b2e9-89185e861362")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR019"
 			(at 146.05 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -4567,7 +4567,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR048")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -4585,7 +4585,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0d4f655b-5226-4913-9ecc-41c259bbd18b")
-		(property "Reference" "R11"
+		(property "Reference" "R30"
 			(at 254 96.5199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4649,7 +4649,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R11")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -4667,7 +4667,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0d7e3514-58cb-40d7-bcd1-c2b8ffa0ae40")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR015"
 			(at 106.68 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -4727,7 +4727,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR09")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -4745,7 +4745,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0dd1f36a-f82a-47d4-a9a9-be6ce5893ac6")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR028"
 			(at 200.66 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -4806,7 +4806,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR044")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -4823,7 +4823,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "118c9ecc-6631-4f86-bbe3-e6381f0b2968")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR020"
 			(at 146.05 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -4883,7 +4883,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR046")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -5064,7 +5064,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1abd09b6-d348-4fc8-bdc1-4c0d6c0ff173")
-		(property "Reference" "R1"
+		(property "Reference" "R20"
 			(at 62.23 38.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5138,7 +5138,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R1")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -5155,7 +5155,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1e233279-9388-4fcd-a7f8-6ee129ece1c8")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR018"
 			(at 146.05 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -5215,7 +5215,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR045")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -5233,7 +5233,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21c4c061-a1e0-4f5f-a0ff-b17a51b5ea81")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR09"
 			(at 101.6 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -5293,7 +5293,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR019")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -5311,7 +5311,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27668799-51d3-43a9-a88d-363bf7d725aa")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR030"
 			(at 200.66 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -5372,7 +5372,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR039")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -5390,7 +5390,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b83b263-b672-4b55-ac92-6ab16db93ca7")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR014"
 			(at 106.68 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -5450,7 +5450,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR08")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -5468,7 +5468,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "307a7bbc-69d0-4673-aa9b-30abead22ad2")
-		(property "Reference" "C4"
+		(property "Reference" "C7"
 			(at 231.14 38.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5532,7 +5532,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "C4")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -5550,7 +5550,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "30cadcc4-a0b7-4be4-81d7-bd549ce4c8e6")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR08"
 			(at 101.6 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -5610,7 +5610,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR018")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -5711,7 +5711,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3149584c-7e0e-4b31-a5c3-355bd384b7b7")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR033"
 			(at 227.33 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -5771,7 +5771,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR043")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -5789,7 +5789,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "33720dcd-af9e-47e5-ba13-841da45d652a")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR05"
 			(at 101.6 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -5849,7 +5849,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR015")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -5867,7 +5867,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b1efd17-cbcf-4452-9100-74a6a9f19ba5")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR034"
 			(at 227.33 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5928,7 +5928,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR038")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -5946,7 +5946,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41c80b90-2328-4bf3-92d4-25a9b6a2c7b7")
-		(property "Reference" "R2"
+		(property "Reference" "R23"
 			(at 82.55 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6010,7 +6010,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R2")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -6028,7 +6028,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "432032ba-edfb-4e83-8816-4272555a24a1")
-		(property "Reference" "R8"
+		(property "Reference" "R26"
 			(at 171.45 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6090,7 +6090,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R8")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -6108,7 +6108,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43ddc6de-e08b-4eb1-8f12-feb1c34abb72")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR036"
 			(at 251.46 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -6169,7 +6169,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR029")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -6187,7 +6187,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46350883-a2f4-42e1-9d57-b2f733edcac5")
-		(property "Reference" "Q4"
+		(property "Reference" "Q5"
 			(at 82.55 107.9499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6276,7 +6276,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "Q4")
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -6294,7 +6294,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "50911433-2f05-4d53-a982-60cf0e85ea66")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 95.25 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6365,7 +6365,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "U3")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -6383,7 +6383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5134e87d-90bd-4143-8d0b-357dd384cc68")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR026"
 			(at 200.66 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -6444,7 +6444,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR027")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -6462,7 +6462,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "513f33c3-eb98-4142-b443-75bd98c07bfa")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR024"
 			(at 177.8 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -6522,7 +6522,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR026")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -6539,7 +6539,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5968f79e-5faa-42fd-8a83-29ccfc55be70")
-		(property "Reference" "U4"
+		(property "Reference" "U8"
 			(at 229.362 64.516 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6621,7 +6621,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "U4")
+					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -6639,7 +6639,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59f40574-3305-4867-bf78-ed956e47a9e9")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR07"
 			(at 101.6 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -6699,7 +6699,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR017")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -6717,7 +6717,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59fd123e-d4d2-495e-95f4-79528620ae02")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR011"
 			(at 106.68 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -6777,7 +6777,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR013")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -6795,7 +6795,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5aadf397-23e5-4c23-b1e0-c2ff59ccf693")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR021"
 			(at 146.05 127 0)
 			(hide yes)
 			(show_name no)
@@ -6856,7 +6856,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR047")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -6956,7 +6956,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63a43529-7696-48a4-8b93-9e2195f6d533")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR012"
 			(at 106.68 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -7016,7 +7016,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR010")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -7229,7 +7229,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "69f231c5-6fb2-407f-9ac9-314ba82575a4")
-		(property "Reference" "U1"
+		(property "Reference" "U2"
 			(at 95.25 16.51 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7300,7 +7300,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "U1")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -7407,7 +7407,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ded38d7-d1c1-45cb-9dde-2d1ea0457e4d")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR013"
 			(at 106.68 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -7467,7 +7467,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR011")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -7485,7 +7485,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "740efb94-57fb-4b29-9ede-6a134524834c")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR017"
 			(at 146.05 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -7545,7 +7545,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR031")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -7641,7 +7641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7bc45842-249c-44ba-8ece-98f0c7ec304e")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR010"
 			(at 106.68 25.4 0)
 			(hide yes)
 			(show_name no)
@@ -7701,7 +7701,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR012")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -7719,7 +7719,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7ca3e46f-c43d-46f9-86cb-0e93e90c6967")
-		(property "Reference" "R6"
+		(property "Reference" "R25"
 			(at 82.55 184.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7783,7 +7783,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R6")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -7800,7 +7800,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "81b730eb-612d-4142-bb2a-e4edda0e21bd")
-		(property "Reference" "R3"
+		(property "Reference" "R21"
 			(at 62.23 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7874,7 +7874,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R3")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -7891,7 +7891,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "83109822-500b-43e2-9dfa-b53503ecec6c")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR035"
 			(at 251.46 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -7951,7 +7951,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR049")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -7968,7 +7968,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "86ea8aff-1ac3-4170-b8a6-de697865790a")
-		(property "Reference" "R5"
+		(property "Reference" "R22"
 			(at 62.23 162.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8042,7 +8042,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R5")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -8250,7 +8250,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92cab537-03f7-4534-9308-359ffc80694b")
-		(property "Reference" "U2"
+		(property "Reference" "U3"
 			(at 95.25 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8321,7 +8321,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "U2")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -8340,7 +8340,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9641f8fe-2d15-4b7b-a3ee-040e3da4f885")
-		(property "Reference" "C7"
+		(property "Reference" "C6"
 			(at 142.24 113.0299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8404,7 +8404,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "C7")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -8511,7 +8511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a0a1c393-f879-4d75-a94f-23c1339a94ea")
-		(property "Reference" "R9"
+		(property "Reference" "R27"
 			(at 171.45 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8573,7 +8573,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R9")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -8592,7 +8592,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a2ef4b74-436a-4442-8c3e-7dd00846bdbd")
-		(property "Reference" "C6"
+		(property "Reference" "C5"
 			(at 142.24 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8656,7 +8656,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "C6")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -8673,7 +8673,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a3dd1e1c-e401-411f-a973-6454da26dc5b")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR027"
 			(at 200.66 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -8733,7 +8733,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR040")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -8750,7 +8750,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a4bfca4b-3c7d-4b08-8285-00a3c8fe5995")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR029"
 			(at 200.66 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -8810,7 +8810,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR042")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -8828,7 +8828,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a666e9fd-d579-4f48-bd7b-d41c468ba8b5")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR016"
 			(at 146.05 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -8888,7 +8888,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR030")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -8906,7 +8906,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b29b57d1-dc4c-41d0-9964-c21c4e3aeca5")
-		(property "Reference" "R_TERM"
+		(property "Reference" "R_TERM1"
 			(at 248.92 69.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8970,7 +8970,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R_TERM")
+					(reference "R_TERM1")
 					(unit 1)
 				)
 			)
@@ -8987,7 +8987,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b3b686b9-95f5-4f3b-a1b7-15ecc0e26b1c")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR031"
 			(at 227.33 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9047,7 +9047,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR041")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -9065,7 +9065,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b4e43e91-3189-4547-99c8-f52dab393507")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR04"
 			(at 101.6 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -9125,7 +9125,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR014")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -9225,7 +9225,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be03bfaf-b37d-426a-a2a1-1b7dc88151e5")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR023"
 			(at 177.8 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9285,7 +9285,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR024")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -9303,7 +9303,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c69baacc-fd0b-4416-89d3-4e0a3d89f837")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR032"
 			(at 227.33 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -9364,7 +9364,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR028")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -9383,7 +9383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d1951117-236c-4fdd-b9a8-989fe80707d6")
-		(property "Reference" "C5"
+		(property "Reference" "C4"
 			(at 142.24 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9447,7 +9447,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "C5")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -9465,7 +9465,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d3c26eaf-2d88-4e94-9c00-861411737e77")
-		(property "Reference" "Q5"
+		(property "Reference" "Q3"
 			(at 57.15 179.0701 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9554,7 +9554,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "Q5")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -9572,7 +9572,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d64eaffa-d5f7-4c7e-94de-30f7e1dc0335")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR037"
 			(at 270.51 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -9633,7 +9633,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR036")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -9651,7 +9651,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc936cd9-4d97-4e8e-b182-d6d6b90f5593")
-		(property "Reference" "R7"
+		(property "Reference" "R28"
 			(at 208.28 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9713,7 +9713,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "R7")
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -9731,7 +9731,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2c65c83-4274-46d0-b154-bb5f75178029")
-		(property "Reference" "Q2"
+		(property "Reference" "Q4"
 			(at 82.55 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9820,7 +9820,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "Q2")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -9920,7 +9920,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eabcc0f1-0573-4139-81fe-9a2a0536fe52")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR06"
 			(at 101.6 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -9980,7 +9980,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR016")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -10080,7 +10080,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fa8fb3c9-beb6-4211-8570-d42ee1e09b03")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR022"
 			(at 177.8 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -10140,7 +10140,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR023")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -10158,7 +10158,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fd21b0bb-b5df-4a9b-bfe8-37c10ba33a99")
-		(property "Reference" "Q3"
+		(property "Reference" "Q2"
 			(at 57.15 116.8401 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10247,7 +10247,7 @@
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "Q3")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
