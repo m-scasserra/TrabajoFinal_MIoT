@@ -2705,6 +2705,16 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 157.48) (xy 260.35 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "063444d8-c816-4c0d-b9ef-16eb221c6147")
+	)
+	(wire
+		(pts
 			(xy 80.01 162.56) (xy 85.09 162.56)
 		)
 		(stroke
@@ -2953,6 +2963,16 @@
 			(type default)
 		)
 		(uuid "2b6d9c3d-ced3-41c2-958f-8b20f3333c2e")
+	)
+	(wire
+		(pts
+			(xy 248.92 146.05) (xy 248.92 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c511359-0d25-4b60-a10c-3d8066d951b3")
 	)
 	(wire
 		(pts
@@ -3316,6 +3336,16 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 140.97) (xy 248.92 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69b18052-5c50-47d6-bb50-d100474f142b")
+	)
+	(wire
+		(pts
 			(xy 251.46 91.44) (xy 251.46 93.98)
 		)
 		(stroke
@@ -3433,6 +3463,16 @@
 			(type default)
 		)
 		(uuid "79d51650-ecf6-485e-8ebc-4aeedfdab813")
+	)
+	(wire
+		(pts
+			(xy 248.92 142.24) (xy 256.54 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a7449b7-4a6e-4c7c-a717-ed34d17a8a45")
 	)
 	(wire
 		(pts
@@ -3617,6 +3657,26 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 154.94) (xy 260.35 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7147591-8d66-4239-974b-d200fc00497c")
+	)
+	(wire
+		(pts
+			(xy 248.92 158.75) (xy 248.92 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7e7118a-13b2-4ab2-8001-40aa521018be")
+	)
+	(wire
+		(pts
 			(xy 30.48 95.25) (xy 40.64 95.25)
 		)
 		(stroke
@@ -3644,6 +3704,16 @@
 			(type default)
 		)
 		(uuid "ab065575-4d36-4665-a9c9-4bd42f8cdb0e")
+	)
+	(wire
+		(pts
+			(xy 248.92 144.78) (xy 256.54 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac661398-6d65-478e-8d67-2f0a0272882f")
 	)
 	(wire
 		(pts
@@ -3895,6 +3965,16 @@
 			(type default)
 		)
 		(uuid "d8a0e0fb-180f-405d-ac2e-b7c0abdb7824")
+	)
+	(wire
+		(pts
+			(xy 248.92 153.67) (xy 248.92 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8e3c6da-46a6-42ad-a26d-d33a55935084")
 	)
 	(wire
 		(pts
@@ -4187,6 +4267,17 @@
 		)
 		(uuid "050fcf50-da9c-4b13-ae85-c9784d9a1c2b")
 	)
+	(hierarchical_label "GND_485"
+		(shape input)
+		(at 260.35 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0f0b1a19-3236-4fcc-8973-2f878c320928")
+	)
 	(hierarchical_label "RXD_485"
 		(shape output)
 		(at 163.83 49.53 180)
@@ -4242,6 +4333,17 @@
 		)
 		(uuid "60b0af70-4e01-43ac-b883-e82ab67e9258")
 	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 256.54 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bd59a447-6770-4293-af71-63fb815e17c3")
+	)
 	(hierarchical_label "PULSE_IN3+"
 		(shape input)
 		(at 30.48 157.48 180)
@@ -4274,6 +4376,17 @@
 			(justify right)
 		)
 		(uuid "c4fcf53d-3867-4a19-8221-89578738cced")
+	)
+	(hierarchical_label "+3.3V_485"
+		(shape input)
+		(at 260.35 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cbcad942-777f-4962-99f2-779af5b09fee")
 	)
 	(hierarchical_label "485_B"
 		(shape bidirectional)
@@ -4308,6 +4421,17 @@
 		)
 		(uuid "e1e55e98-8cc3-4100-90e1-ad200ea7c226")
 	)
+	(hierarchical_label "+3.3V"
+		(shape input)
+		(at 256.54 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ea109d6a-c8cf-4d88-ae11-27d9da001085")
+	)
 	(hierarchical_label "PULSE_IN2+"
 		(shape input)
 		(at 30.48 95.25 180)
@@ -4329,6 +4453,83 @@
 			(justify right)
 		)
 		(uuid "fc25c2e0-6144-4b9c-baaa-52c1a7a93a8e")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 101.6 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "04bbceb1-66c9-4428-bddb-2ef2e71918e2")
+		(property "Reference" "#PWR047"
+			(at 101.6 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 105.664 64.008 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 101.6 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ac0c1c52-135f-45dd-b5cd-c0429a74c3ce")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR047")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4574,6 +4775,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 248.92 140.97 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0d0fe913-49de-428f-8b14-deff31750ddc")
+		(property "Reference" "#PWR048"
+			(at 248.92 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 252.984 139.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 248.92 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5a4864bd-45db-415e-9412-d98dd34c5cd7")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 251.46 97.79 0)
 		(unit 1)
@@ -4650,84 +4928,6 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "R30")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 106.68 163.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0d7e3514-58cb-40d7-bcd1-c2b8ffa0ae40")
-		(property "Reference" "#PWR015"
-			(at 106.68 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 106.68 168.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e0871eda-4206-462c-b08d-e6165356a385")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -5145,6 +5345,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 248.92 146.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1dbe2e1d-626b-430d-ba23-1ec41791e8cd")
+		(property "Reference" "#PWR049"
+			(at 248.92 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 252.984 147.828 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 248.92 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3319969-069e-4596-810d-576fca0ce119")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 146.05 77.47 0)
 		(unit 1)
@@ -5231,7 +5508,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "21c4c061-a1e0-4f5f-a0ff-b17a51b5ea81")
 		(property "Reference" "#PWR09"
 			(at 101.6 193.04 0)
@@ -5245,7 +5521,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 101.6 191.77 0)
+			(at 105.664 188.468 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5379,84 +5655,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 106.68 146.05 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2b83b263-b672-4b55-ac92-6ab16db93ca7")
-		(property "Reference" "#PWR014"
-			(at 106.68 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 106.68 140.97 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 106.68 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "63a8a57e-0b65-40db-b65b-fa0d641e6810")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 227.33 39.37 0)
 		(unit 1)
@@ -5533,84 +5731,6 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 101.6 173.99 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "30cadcc4-a0b7-4be4-81d7-bd549ce4c8e6")
-		(property "Reference" "#PWR08"
-			(at 101.6 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 101.6 168.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 101.6 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6a7d32da-1f3d-45a3-a0ad-764209dcb6da")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -5779,7 +5899,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 101.6 62.23 0)
+		(at 101.6 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5787,10 +5907,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "33720dcd-af9e-47e5-ba13-841da45d652a")
-		(property "Reference" "#PWR05"
-			(at 101.6 68.58 0)
+		(uuid "36b0ec14-a521-40cb-b40d-60cfbca1d803")
+		(property "Reference" "#PWR046"
+			(at 101.6 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5801,7 +5920,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 101.6 67.31 0)
+			(at 105.664 126.238 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5811,7 +5930,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 62.23 0)
+			(at 101.6 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5822,7 +5941,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 62.23 0)
+			(at 101.6 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5833,7 +5952,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 101.6 62.23 0)
+			(at 101.6 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5844,12 +5963,91 @@
 			)
 		)
 		(pin "1"
-			(uuid "5a936509-fbc6-4e41-8923-f28bd5020876")
+			(uuid "9a071028-d0b2-41f4-8cb0-07319023b7c8")
 		)
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR05")
+					(reference "#PWR046")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 248.92 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3907b22f-38b8-4659-b896-39a3f356b8d5")
+		(property "Reference" "#PWR051"
+			(at 248.92 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND_485"
+			(at 251.46 160.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 248.92 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8aaa6082-04ca-41a6-8968-19948d588267")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -5929,6 +6127,83 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 106.68 163.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3f9b543d-8822-42ef-aabd-67224aadfb6d")
+		(property "Reference" "#PWR015"
+			(at 106.68 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.744 165.608 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0dc74223-d664-4fe2-81d8-8efb6feeb9c9")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -6529,6 +6804,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 101.6 173.99 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "538c0a12-9a1f-4bbd-b177-e30dc87b93c4")
+		(property "Reference" "#PWR08"
+			(at 101.6 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 105.664 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 101.6 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "529338c8-a17f-4307-9619-3f501a69b8a6")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Interface_UART:MAX3483")
 		(at 227.33 81.28 0)
 		(unit 1)
@@ -6622,162 +6974,6 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "U8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 101.6 124.46 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "59f40574-3305-4867-bf78-ed956e47a9e9")
-		(property "Reference" "#PWR07"
-			(at 101.6 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 101.6 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 101.6 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "983da43b-14d5-40d3-a7d3-87da196c4712")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 106.68 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "59fd123e-d4d2-495e-95f4-79528620ae02")
-		(property "Reference" "#PWR011"
-			(at 106.68 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 106.68 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4f7949e6-cbd2-45e7-b9bc-276f0bcb9320")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -6939,84 +7135,6 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 106.68 83.82 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "63a43529-7696-48a4-8b93-9e2195f6d533")
-		(property "Reference" "#PWR012"
-			(at 106.68 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 106.68 78.74 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 106.68 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "51768768-011e-4c39-ad37-360898ae7b0e")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -7396,8 +7514,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 106.68 101.6 0)
+		(lib_id "power:+3.3V")
+		(at 101.6 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7405,10 +7523,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6ded38d7-d1c1-45cb-9dde-2d1ea0457e4d")
-		(property "Reference" "#PWR013"
-			(at 106.68 107.95 0)
+		(uuid "6fd0f740-ee54-4601-b65b-cbb07c5ef52b")
+		(property "Reference" "#PWR045"
+			(at 101.6 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7418,8 +7535,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 106.68 106.68 0)
+		(property "Value" "+3.3V"
+			(at 105.664 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7429,7 +7546,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 101.6 0)
+			(at 101.6 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7440,7 +7557,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 101.6 0)
+			(at 101.6 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7450,86 +7567,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "00f0247e-9fae-4754-9e6d-f2fedf4e3c4f")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 146.05 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "740efb94-57fb-4b29-9ede-6a134524834c")
-		(property "Reference" "#PWR017"
-			(at 146.05 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 146.05 60.96 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 146.05 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 146.05 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 146.05 55.88 0)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 101.6 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7540,12 +7579,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a306105-4b7e-488c-a507-2a69957fe88b")
+			(uuid "f637d765-8bca-4fda-8124-afee9b7643b7")
 		)
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR017")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -7624,84 +7663,6 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 106.68 21.59 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7bc45842-249c-44ba-8ece-98f0c7ec304e")
-		(property "Reference" "#PWR010"
-			(at 106.68 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 106.68 16.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 21.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 21.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 106.68 21.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "00009758-9a63-4954-9e3a-4a1ba212f100")
-		)
-		(instances
-			(project "LoRa-Monitor"
-				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -8132,6 +8093,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 106.68 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "88fa2f9a-0642-4bb9-a0b9-b9bb43e88e60")
+		(property "Reference" "#PWR013"
+			(at 106.68 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.744 103.378 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "689fb32c-f956-4b76-ad60-4c7207fffa20")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_BJT:Q_NPN_BEC")
 		(at 62.23 53.34 0)
 		(mirror y)
@@ -8233,6 +8271,83 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 106.68 21.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9038a644-be6d-4d6e-b282-1d9c7928bb45")
+		(property "Reference" "#PWR010"
+			(at 106.68 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 110.744 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 106.68 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b2b0e669-e472-4a3c-a9b6-2083098dbb49")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -8500,6 +8615,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 146.05 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9b8988d5-637e-4598-a701-a9bc9dc6ccae")
+		(property "Reference" "#PWR017"
+			(at 146.05 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 150.114 57.658 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 146.05 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "68868678-d1a3-48e5-ad3d-29f175dda6d8")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 171.45 102.87 90)
 		(unit 1)
@@ -8509,10 +8701,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "a0a1c393-f879-4d75-a94f-23c1339a94ea")
 		(property "Reference" "R27"
-			(at 171.45 96.52 90)
+			(at 171.45 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8522,7 +8713,7 @@
 			)
 		)
 		(property "Value" "330R"
-			(at 171.45 99.06 90)
+			(at 171.45 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8826,8 +9017,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a666e9fd-d579-4f48-bd7b-d41c468ba8b5")
+		(uuid "b26f670a-3a13-4859-87df-5ada38a1238b")
 		(property "Reference" "#PWR016"
 			(at 146.05 46.99 0)
 			(hide yes)
@@ -8840,7 +9030,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 146.05 38.1 0)
+			(at 150.114 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8883,7 +9073,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6a1a4b21-4e0a-411c-bf99-f84606658f8e")
+			(uuid "ce2e9927-e0ca-461d-96e1-d24f36dcf5d0")
 		)
 		(instances
 			(project "LoRa-Monitor"
@@ -9055,7 +9245,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 101.6 49.53 0)
+		(at 248.92 153.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9063,10 +9253,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b4e43e91-3189-4547-99c8-f52dab393507")
-		(property "Reference" "#PWR04"
-			(at 101.6 53.34 0)
+		(uuid "b53269ec-b45e-4734-941c-e48baa245377")
+		(property "Reference" "#PWR052"
+			(at 248.92 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9076,8 +9265,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 101.6 44.45 0)
+		(property "Value" "+3.3V_485"
+			(at 255.016 152.146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9087,7 +9276,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 49.53 0)
+			(at 248.92 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9098,7 +9287,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 49.53 0)
+			(at 248.92 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9109,7 +9298,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 101.6 49.53 0)
+			(at 248.92 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9120,12 +9309,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "076e54c2-de08-4031-8353-456cf0739a58")
+			(uuid "80383a94-c88d-41a3-bd18-329207bff42f")
 		)
 		(instances
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
-					(reference "#PWR04")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -9286,6 +9475,83 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 106.68 146.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bf1c08aa-3587-409c-a07f-6f655b8102d5")
+		(property "Reference" "#PWR014"
+			(at 106.68 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 110.744 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 106.68 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab539a4b-2200-423c-a5c3-2415b35dd980")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -9827,6 +10093,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 106.68 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e5a99410-1dc3-4d2d-b7ba-6e859155e2b4")
+		(property "Reference" "#PWR011"
+			(at 106.68 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.744 41.148 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dd57f317-782c-4f36-8ec1-fc5e344135f2")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 101.6 180.34 0)
 		(unit 1)
@@ -9918,7 +10261,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "eabcc0f1-0573-4139-81fe-9a2a0536fe52")
 		(property "Reference" "#PWR06"
 			(at 101.6 115.57 0)
@@ -9932,7 +10274,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 101.6 106.68 0)
+			(at 105.664 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9981,6 +10323,83 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 106.68 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "edfdde0f-f67d-450c-a248-249c848361e3")
+		(property "Reference" "#PWR012"
+			(at 106.68 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 110.744 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 106.68 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "79d1f3f0-47e8-41c2-9aa6-026e9e2109fb")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/eb9302a5-57ee-4bcb-97a3-49e9548a58ec"
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)

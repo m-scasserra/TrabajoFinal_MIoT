@@ -664,7 +664,7 @@
         "uuid": "7510cc7d-c141-46d4-8947-7def3af8cf35"
       }
     ],
-    "used_designators": "L1-2,R42,#PWR38,#PWR59-60,#PWR62,#PWR64-73,C13-21,U11-13",
+    "used_designators": "J1,R43-94,U14-18,Y1,#PWR8,#PWR10-17,#PWR39-49,#PWR51-53,#PWR74-113,L2-3,C14-15,C18,C22-41",
     "variants": []
   },
   "sheets": [
@@ -687,6 +687,10 @@
     [
       "e98113b5-abe6-4cd1-ae05-96bff57301ff",
       "Power supply"
+    ],
+    [
+      "d3ce2e9b-3d29-41cf-a745-789309f3e1db",
+      "Energy meter"
     ]
   ],
   "text_variables": {},
