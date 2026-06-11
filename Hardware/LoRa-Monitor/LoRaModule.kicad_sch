@@ -677,25 +677,6 @@
 					)
 				)
 				(pin power_in line
-					(at 17.78 12.7 180)
-					(length 5.08)
-					(hide yes)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
 					(at 17.78 -12.7 180)
 					(length 5.08)
 					(hide yes)
@@ -908,6 +889,27 @@
 						)
 					)
 					(number "22"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "E22-900M30S_1_0"
+				(pin passive line
+					(at 17.78 12.7 180)
+					(length 5.08)
+					(hide yes)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "10"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1471,6 +1473,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 73.66) (xy 93.98 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2652e78-a75b-4661-abec-9ae1defa62ed")
+	)
+	(wire
+		(pts
 			(xy 85.09 78.74) (xy 85.09 80.01)
 		)
 		(stroke
@@ -1755,6 +1767,17 @@
 		)
 		(uuid "65129149-69a8-40de-9b07-4b1e83cb138a")
 	)
+	(hierarchical_label "SCLK_SPI1"
+		(shape input)
+		(at 116.84 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7118eee3-074c-4149-b3af-31d9ecb14e9f")
+	)
 	(hierarchical_label "CS_E22"
 		(shape input)
 		(at 82.55 88.9 180)
@@ -1788,6 +1811,17 @@
 		)
 		(uuid "ac3873cf-7b3e-4102-a3e6-e5ef7f8e4265")
 	)
+	(hierarchical_label "~{RST_E22}"
+		(shape input)
+		(at 92.71 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b2bb0c63-ca91-4f6b-92be-3d6a4517309b")
+	)
 	(hierarchical_label "+3.3V"
 		(shape input)
 		(at 212.09 77.47 0)
@@ -1798,17 +1832,6 @@
 			(justify left)
 		)
 		(uuid "c4a12854-66b9-4dfc-b355-956395c46caf")
-	)
-	(hierarchical_label "SCKL_SPI1"
-		(shape input)
-		(at 116.84 86.36 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e455882b-2268-49d5-9923-540f38ba00b3")
 	)
 	(hierarchical_label "RXEN_E22"
 		(shape input)

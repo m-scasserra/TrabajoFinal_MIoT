@@ -5,6 +5,187 @@
 	(uuid "95d44082-c1be-4a15-a575-e2386e67e216")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Conn_01x02_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02_Pin"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_Pin_1_1"
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_Coaxial"
 			(pin_names
 				(offset 1.016)
@@ -2372,6 +2553,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 149.86) (xy 170.18 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47f347a7-bcc8-4135-9cad-96570bf75662")
+	)
+	(wire
+		(pts
 			(xy 114.3 49.53) (xy 119.38 49.53)
 		)
 		(stroke
@@ -2419,6 +2610,16 @@
 			(type default)
 		)
 		(uuid "5be5c91d-36be-4240-b906-91b1d63f5a43")
+	)
+	(wire
+		(pts
+			(xy 167.64 139.7) (xy 170.18 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dd88845-d074-404a-a6ca-164e7f020c9b")
 	)
 	(wire
 		(pts
@@ -2479,6 +2680,16 @@
 			(type default)
 		)
 		(uuid "829c4b43-0c1c-49d1-98e1-df9d3dad4903")
+	)
+	(wire
+		(pts
+			(xy 167.64 152.4) (xy 170.18 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85cae688-5c64-427e-8492-fb6d4636f0fb")
 	)
 	(wire
 		(pts
@@ -2562,6 +2773,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 142.24) (xy 170.18 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d43b6ba9-756a-47de-8c88-3b1a036f9dbc")
+	)
+	(wire
+		(pts
 			(xy 228.6 130.81) (xy 231.14 130.81)
 		)
 		(stroke
@@ -2641,7 +2862,7 @@
 		(uuid "faf2f8af-d642-42dc-8911-ecdb73456cbd")
 	)
 	(hierarchical_label "TXD"
-		(shape output)
+		(shape input)
 		(at 44.45 48.26 180)
 		(effects
 			(font
@@ -2673,6 +2894,17 @@
 		)
 		(uuid "10a12f59-e625-4c56-87cd-df605f1366f7")
 	)
+	(hierarchical_label "THERM_BATT-"
+		(shape output)
+		(at 167.64 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "157fb6e9-e378-490c-bbc5-7d0acbfc6b64")
+	)
 	(hierarchical_label "USB_D-"
 		(shape bidirectional)
 		(at 119.38 49.53 0)
@@ -2694,6 +2926,17 @@
 			(justify right)
 		)
 		(uuid "1d9aab48-d07d-4d84-9272-9df498efa8cb")
+	)
+	(hierarchical_label "BATT-"
+		(shape bidirectional)
+		(at 167.64 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "251acebd-4033-4947-945a-d31e0677ba9e")
 	)
 	(hierarchical_label "485_B"
 		(shape bidirectional)
@@ -2729,7 +2972,7 @@
 		(uuid "2ec4f4ac-c72f-4e9f-8fbd-0c4f8af15e72")
 	)
 	(hierarchical_label "RXD"
-		(shape input)
+		(shape output)
 		(at 44.45 50.8 180)
 		(effects
 			(font
@@ -2749,6 +2992,28 @@
 			(justify right)
 		)
 		(uuid "4896d4a6-5fd4-47d1-8aa2-ee3fc9545edd")
+	)
+	(hierarchical_label "BATT+"
+		(shape bidirectional)
+		(at 167.64 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "49decd36-48ca-4e4c-854d-b94f238649b9")
+	)
+	(hierarchical_label "THERM_BATT+"
+		(shape output)
+		(at 167.64 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "563a6681-d839-41ab-8c8c-ece89fe0e3d1")
 	)
 	(hierarchical_label "PULSE_IN1+"
 		(shape output)
@@ -2806,7 +3071,7 @@
 		(uuid "5c3254af-b3c2-4fa7-b49e-59907e8a638d")
 	)
 	(hierarchical_label "ESP_EN"
-		(shape input)
+		(shape output)
 		(at 44.45 45.72 180)
 		(effects
 			(font
@@ -2872,7 +3137,7 @@
 		(uuid "ac916fc2-24ac-4fb0-874a-0b028a3b4c09")
 	)
 	(hierarchical_label "GPIO0"
-		(shape input)
+		(shape output)
 		(at 67.31 50.8 0)
 		(effects
 			(font
@@ -3168,6 +3433,87 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/b9106b62-0c4d-45f8-8fff-77bde9d1c249"
 					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 175.26 139.7 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2e9489aa-c604-435c-abcb-eeef59129755")
+		(property "Reference" "J13"
+			(at 174.625 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 174.625 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 175.26 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 175.26 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "0d9003f9-44b3-4e12-a0e1-e17ad7bb88bb")
+		)
+		(pin "1"
+			(uuid "f6f268b6-a797-4abb-a6bb-dcbde4e2808d")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/b9106b62-0c4d-45f8-8fff-77bde9d1c249"
+					(reference "J13")
 					(unit 1)
 				)
 			)
@@ -3498,6 +3844,87 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/b9106b62-0c4d-45f8-8fff-77bde9d1c249"
 					(reference "#PWR0136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 175.26 149.86 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d2f7164-cb41-4894-9bc4-a372038fdf13")
+		(property "Reference" "J14"
+			(at 174.625 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 174.625 147.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 175.26 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 175.26 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9279a079-c9f1-4775-b32f-cd2d3ba28ec0")
+		)
+		(pin "1"
+			(uuid "e2c2baac-a3c0-425c-b1f8-0c06b45fd5ff")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/b9106b62-0c4d-45f8-8fff-77bde9d1c249"
+					(reference "J14")
 					(unit 1)
 				)
 			)
