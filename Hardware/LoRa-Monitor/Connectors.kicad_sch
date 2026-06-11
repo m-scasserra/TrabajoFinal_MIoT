@@ -2513,16 +2513,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 29.21) (xy 231.14 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f5e6b06-1c3c-4914-87b4-72dfe4fd4242")
-	)
-	(wire
-		(pts
 			(xy 228.6 100.33) (xy 231.14 100.33)
 		)
 		(stroke
@@ -2639,7 +2629,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6daa35f3-109d-44b0-9ae2-12c06793e0e7")
+		(uuid "71246193-48e7-462f-a6c0-f69af8775a88")
 	)
 	(wire
 		(pts
@@ -2710,6 +2700,16 @@
 			(type default)
 		)
 		(uuid "a13c4260-1a7a-445f-b3dd-881f07e4cfbd")
+	)
+	(wire
+		(pts
+			(xy 227.33 34.29) (xy 231.14 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a96adeb0-c548-4afd-b935-55954184fa2a")
 	)
 	(wire
 		(pts
@@ -2803,16 +2803,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 34.29) (xy 231.14 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d96ac964-8fa6-42c7-971e-f06b6485104b")
-	)
-	(wire
-		(pts
 			(xy 154.94 184.15) (xy 156.21 184.15)
 		)
 		(stroke
@@ -2853,6 +2843,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 29.21) (xy 231.14 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f17df789-bd30-48e7-a9a5-f7d62d7be62a")
+	)
+	(wire
+		(pts
 			(xy 111.76 52.07) (xy 114.3 52.07)
 		)
 		(stroke
@@ -2885,7 +2885,7 @@
 	)
 	(hierarchical_label "Ua"
 		(shape output)
-		(at 227.33 29.21 180)
+		(at 227.33 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3149,7 +3149,7 @@
 	)
 	(hierarchical_label "Uc"
 		(shape output)
-		(at 227.33 34.29 180)
+		(at 227.33 29.21 180)
 		(effects
 			(font
 				(size 1.27 1.27)

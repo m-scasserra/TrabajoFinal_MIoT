@@ -4012,6 +4012,12 @@
 		(uuid "ecc2d408-eb87-4175-86d6-b72dd2f36e6d")
 	)
 	(junction
+		(at 264.16 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4ac5fe7-88b3-4e37-adf9-841598cb8de8")
+	)
+	(junction
 		(at 160.02 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4962,7 +4968,7 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 110.49) (xy 265.43 110.49)
+			(xy 251.46 110.49) (xy 264.16 110.49)
 		)
 		(stroke
 			(width 0)
@@ -5179,6 +5185,16 @@
 			(type default)
 		)
 		(uuid "9a9f2353-7301-445d-921f-960a229bff4d")
+	)
+	(wire
+		(pts
+			(xy 264.16 110.49) (xy 265.43 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ab945b2-1214-4178-89d0-050c620dfa63")
 	)
 	(wire
 		(pts
@@ -11900,6 +11916,84 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/e98113b5-abe6-4cd1-ae05-96bff57301ff"
 					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 264.16 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fae0f442-a2c4-4a22-8c8e-cd70e4abc14e")
+		(property "Reference" "#FLG05"
+			(at 264.16 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 264.16 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 264.16 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 264.16 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 264.16 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c3efebcf-2f62-4e2c-a701-7d75b9a9158c")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/e98113b5-abe6-4cd1-ae05-96bff57301ff"
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)

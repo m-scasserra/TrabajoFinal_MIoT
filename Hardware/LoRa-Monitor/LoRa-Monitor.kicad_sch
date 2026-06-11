@@ -539,6 +539,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 128.27) (xy 140.97 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "759a4686-1afa-4727-ab15-3fed72832053")
+	)
+	(wire
+		(pts
 			(xy 158.75 110.49) (xy 158.75 116.84)
 		)
 		(stroke
@@ -556,16 +566,6 @@
 			(type default)
 		)
 		(uuid "76df4ba2-d6fb-4606-8e54-ed224d224dca")
-	)
-	(wire
-		(pts
-			(xy 100.33 130.81) (xy 140.97 130.81)
-		)
-		(stroke
-			(width 0.508)
-			(type default)
-		)
-		(uuid "79fb337d-4589-4563-9897-e6f6c91731c9")
 	)
 	(wire
 		(pts
@@ -587,16 +587,6 @@
 			(type default)
 		)
 		(uuid "7b2e3336-2398-45cd-90c8-e1cd708f8ece")
-	)
-	(wire
-		(pts
-			(xy 100.33 128.27) (xy 140.97 128.27)
-		)
-		(stroke
-			(width 0.508)
-			(type default)
-		)
-		(uuid "859378a1-4a5c-4200-871c-def2f120c384")
 	)
 	(wire
 		(pts
@@ -760,6 +750,16 @@
 			(type default)
 		)
 		(uuid "b4355735-97f6-45b9-9f6c-5bfdbd77b762")
+	)
+	(wire
+		(pts
+			(xy 100.33 130.81) (xy 140.97 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b793fc70-d7ed-45e4-a27b-21190ea8a73f")
 	)
 	(wire
 		(pts
@@ -2342,7 +2342,7 @@
 			)
 		)
 		(pin "GND_M90" output
-			(at 100.33 128.27 0)
+			(at 100.33 130.81 0)
 			(uuid "e097bec2-91a8-457d-b200-5f2112ccd4af")
 			(effects
 				(font
@@ -2352,7 +2352,7 @@
 			)
 		)
 		(pin "+3.3V_M90" output
-			(at 100.33 130.81 0)
+			(at 100.33 128.27 0)
 			(uuid "f1ddc12d-f5d2-458f-8e87-3ab9ae02141c")
 			(effects
 				(font
