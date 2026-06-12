@@ -2423,6 +2423,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 29.21) (xy 231.14 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dfbbeef-f561-4b90-b786-d070f34531f8")
+	)
+	(wire
+		(pts
 			(xy 111.76 46.99) (xy 114.3 46.99)
 		)
 		(stroke
@@ -2510,6 +2520,16 @@
 			(type default)
 		)
 		(uuid "2ef23fb6-e13b-4d09-a9a1-f5a21cdd9221")
+	)
+	(wire
+		(pts
+			(xy 227.33 34.29) (xy 231.14 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b8841af-a5b0-40e2-b6ed-7f1d6839c011")
 	)
 	(wire
 		(pts
@@ -2623,16 +2643,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 31.75) (xy 231.14 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71246193-48e7-462f-a6c0-f69af8775a88")
-	)
-	(wire
-		(pts
 			(xy 154.94 187.96) (xy 154.94 186.69)
 		)
 		(stroke
@@ -2703,13 +2713,13 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 34.29) (xy 231.14 34.29)
+			(xy 227.33 36.83) (xy 231.14 36.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a96adeb0-c548-4afd-b935-55954184fa2a")
+		(uuid "a8205e6f-551d-498f-a701-e7ea6eaf2e16")
 	)
 	(wire
 		(pts
@@ -2763,6 +2773,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 31.75) (xy 231.14 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3976fb6-43c1-4be5-b7fb-ecf35b05eb23")
+	)
+	(wire
+		(pts
 			(xy 114.3 52.07) (xy 119.38 52.07)
 		)
 		(stroke
@@ -2813,16 +2833,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 36.83) (xy 231.14 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2a3a2c4-1670-4d0f-a059-7afa7b700f3a")
-	)
-	(wire
-		(pts
 			(xy 154.94 182.88) (xy 154.94 184.15)
 		)
 		(stroke
@@ -2840,16 +2850,6 @@
 			(type default)
 		)
 		(uuid "ef6e60a2-b201-402d-b86e-4044f4368b2c")
-	)
-	(wire
-		(pts
-			(xy 227.33 29.21) (xy 231.14 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f17df789-bd30-48e7-a9a5-f7d62d7be62a")
 	)
 	(wire
 		(pts
@@ -2885,7 +2885,7 @@
 	)
 	(hierarchical_label "Ua"
 		(shape output)
-		(at 227.33 34.29 180)
+		(at 227.33 29.21 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3149,7 +3149,7 @@
 	)
 	(hierarchical_label "Uc"
 		(shape output)
-		(at 227.33 29.21 180)
+		(at 227.33 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
