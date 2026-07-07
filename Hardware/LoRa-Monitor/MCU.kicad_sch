@@ -1813,6 +1813,170 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power global)
 			(pin_numbers
@@ -2123,6 +2287,12 @@
 		(uuid "c01bd7d9-ed85-4e00-86a1-8a9a5d9adcb1")
 	)
 	(junction
+		(at 133.35 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d046cc0c-c604-436e-ab87-0799fb246343")
+	)
+	(junction
 		(at 214.63 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2185,6 +2355,16 @@
 			(type default)
 		)
 		(uuid "03839176-fedb-4e44-876a-a0e82e74bab3")
+	)
+	(wire
+		(pts
+			(xy 46.99 157.48) (xy 46.99 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "041e540b-416f-4c1c-9741-15a4f792a5b5")
 	)
 	(wire
 		(pts
@@ -2278,6 +2458,26 @@
 	)
 	(wire
 		(pts
+			(xy 45.72 157.48) (xy 46.99 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21e4410e-d742-4f8d-848d-990c21960c1e")
+	)
+	(wire
+		(pts
+			(xy 114.3 54.61) (xy 129.54 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24b71bdb-8fa3-4814-aa62-9b9a5196973e")
+	)
+	(wire
+		(pts
 			(xy 114.3 69.85) (xy 118.11 69.85)
 		)
 		(stroke
@@ -2335,6 +2535,16 @@
 			(type default)
 		)
 		(uuid "2b879f4d-b33c-4d21-9c27-4058a7f62d34")
+	)
+	(wire
+		(pts
+			(xy 77.47 157.48) (xy 78.74 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dee685f-85b1-46be-8b70-3699c05fcedb")
 	)
 	(wire
 		(pts
@@ -2848,6 +3058,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 168.91) (xy 63.5 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "913094b4-2851-4fdd-8922-ff8690429d82")
+	)
+	(wire
+		(pts
 			(xy 133.35 87.63) (xy 133.35 88.9)
 		)
 		(stroke
@@ -2855,16 +3075,6 @@
 			(type default)
 		)
 		(uuid "944bf421-5b9a-49da-8062-3938d16f6052")
-	)
-	(wire
-		(pts
-			(xy 27.94 72.39) (xy 52.07 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94a16a70-cb72-4575-ab6c-7a39e031b9b2")
 	)
 	(wire
 		(pts
@@ -2935,6 +3145,16 @@
 			(type default)
 		)
 		(uuid "a1712dd5-30ba-4c24-847a-0c8aa0edbb96")
+	)
+	(wire
+		(pts
+			(xy 63.5 157.48) (xy 63.5 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2eeb407-a7fc-43d0-ac9a-64a55e1fd3d2")
 	)
 	(wire
 		(pts
@@ -3118,6 +3338,16 @@
 	)
 	(wire
 		(pts
+			(xy 46.99 168.91) (xy 46.99 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c116c2fa-bec6-44a6-96c5-303f8727ccef")
+	)
+	(wire
+		(pts
 			(xy 194.31 102.87) (xy 184.15 102.87)
 		)
 		(stroke
@@ -3178,13 +3408,13 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 54.61) (xy 118.11 54.61)
+			(xy 78.74 168.91) (xy 78.74 170.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d66ee613-e180-459c-a0e7-5c24ba6342ab")
+		(uuid "dadd67c7-e955-4f53-88aa-d9c3c7aa17ba")
 	)
 	(wire
 		(pts
@@ -3228,6 +3458,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 157.48) (xy 78.74 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e084d13c-2eee-463b-b371-9f83a4096d45")
+	)
+	(wire
+		(pts
 			(xy 114.3 77.47) (xy 118.11 77.47)
 		)
 		(stroke
@@ -3245,6 +3485,16 @@
 			(type default)
 		)
 		(uuid "e338eb9c-2185-406b-abd5-b2e39a3e1c0e")
+	)
+	(wire
+		(pts
+			(xy 133.35 87.63) (xy 134.62 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e574d0fc-25ed-4616-8eea-79409172937d")
 	)
 	(wire
 		(pts
@@ -3268,6 +3518,16 @@
 	)
 	(wire
 		(pts
+			(xy 46.99 72.39) (xy 52.07 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e86b70db-9a5e-4b81-9ec4-96eee7005e7f")
+	)
+	(wire
+		(pts
 			(xy 99.06 87.63) (xy 106.68 87.63)
 		)
 		(stroke
@@ -3278,7 +3538,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 52.07) (xy 52.07 52.07)
+			(xy 25.4 52.07) (xy 52.07 52.07)
 		)
 		(stroke
 			(width 0)
@@ -3305,6 +3565,16 @@
 			(type default)
 		)
 		(uuid "efb92abc-c22b-42a1-94e6-b19864f28641")
+	)
+	(wire
+		(pts
+			(xy 62.23 157.48) (xy 63.5 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f134719a-bdfc-43de-9627-4cde191c471f")
 	)
 	(wire
 		(pts
@@ -3367,12 +3637,12 @@
 		(uuid "033e7197-c1a7-41d8-9af1-03ab102597ba")
 	)
 	(label "SDO_SPI1"
-		(at 38.1 72.39 180)
+		(at 118.11 54.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "19ddce91-8f0a-42ba-9d2b-5803c2ff9b10")
 	)
@@ -3387,12 +3657,12 @@
 		(uuid "20c25ec6-7738-4a3e-9ca7-030aa632f92d")
 	)
 	(label "CS_SD"
-		(at 118.11 54.61 0)
+		(at 46.99 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "322ffe32-dcbc-474d-8de5-218b14078df3")
 	)
@@ -3416,6 +3686,16 @@
 		)
 		(uuid "a38048b8-dfa8-49d8-aace-84c739d151a8")
 	)
+	(label "USR_IN"
+		(at 77.47 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bb19b3b4-a62a-4968-ba8d-e60145d262fc")
+	)
 	(label "SDI_SPI1"
 		(at 213.36 110.49 180)
 		(effects
@@ -3425,6 +3705,16 @@
 			(justify right bottom)
 		)
 		(uuid "c7c1e7eb-925d-4faa-9a4c-678ad537fa39")
+	)
+	(label "USR_IN"
+		(at 134.62 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cd3511ec-9cad-4d07-82da-96101496c13b")
 	)
 	(label "SCLK_SPI1"
 		(at 38.1 59.69 180)
@@ -3502,18 +3792,18 @@
 	)
 	(hierarchical_label "SDO_SPI1"
 		(shape input)
-		(at 27.94 72.39 180)
+		(at 129.54 54.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "2a5eff8e-f687-4cb0-ac40-236b90ff3ac4")
 	)
 	(hierarchical_label "GPIO0"
 		(shape input)
-		(at 46.99 52.07 180)
+		(at 25.4 52.07 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3698,6 +3988,17 @@
 		)
 		(uuid "ba46cbde-05df-4c2e-9c49-d5448514ed78")
 	)
+	(hierarchical_label "ESP_EN"
+		(shape input)
+		(at 45.72 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "be1f288f-56b5-4124-8e34-63c36d37e6f4")
+	)
 	(hierarchical_label "IRQ1"
 		(shape input)
 		(at 118.11 74.93 0)
@@ -3796,6 +4097,17 @@
 			(justify right)
 		)
 		(uuid "e5cd35d1-d414-4468-ba25-04150f1851a5")
+	)
+	(hierarchical_label "GPIO0"
+		(shape input)
+		(at 62.23 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ebb87dd1-d71e-4d08-bbf0-c7a961fcc2b4")
 	)
 	(hierarchical_label "SCLK_SPI1"
 		(shape output)
@@ -6574,6 +6886,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 78.74 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "873fd2b3-6757-4963-9f3b-a2362a82b108")
+		(property "Reference" "#PWR0143"
+			(at 78.74 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 82.804 171.958 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 78.74 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c5b03844-02b9-4950-b0b3-eb2f8337f5b5")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
+					(reference "#PWR0143")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 110.49 92.71 90)
 		(unit 1)
@@ -6653,6 +7042,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 46.99 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "91f4316f-e4e7-4b66-ae39-5c67c536da5b")
+		(property "Reference" "#PWR0142"
+			(at 46.99 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 51.054 171.958 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 46.99 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d74e2d43-d0ec-44f2-ba22-f45d093e1c06")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
+					(reference "#PWR0142")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 110.49 49.53 90)
 		(unit 1)
@@ -6726,6 +7192,88 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
 					(reference "RTX1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 46.99 163.83 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "98e21a58-a1e5-4b79-b683-d69af7de84f2")
+		(property "Reference" "RESET1"
+			(at 48.26 162.5599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 48.26 165.0999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2"
+			(at 41.91 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 46.99 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "16e886b6-e6ef-4713-b7c2-62a71aa39fe0")
+		)
+		(pin "2"
+			(uuid "b8fa3425-f166-4ccd-83d7-09271fe77cf7")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
+					(reference "RESET1")
 					(unit 1)
 				)
 			)
@@ -7044,6 +7592,165 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
 					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a1284b94-2f04-4bda-b640-c5184321d7b8")
+		(property "Reference" "#PWR0141"
+			(at 63.5 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 67.564 171.958 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 63.5 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c5b757b0-89f5-4ce1-942a-42eaf5dc73df")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
+					(reference "#PWR0141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 78.74 163.83 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a2a5fa1a-3e9a-438d-a24a-75fd0d04eb81")
+		(property "Reference" "USR_INPUT1"
+			(at 80.01 162.5599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 80.01 165.0999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2"
+			(at 73.66 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 78.74 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e0dd8daa-5ba1-4902-8669-71fd25817524")
+		)
+		(pin "2"
+			(uuid "dd38ffdc-fd5f-4ccb-b968-b8dcb41ed69d")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
+					(reference "USR_INPUT1")
 					(unit 1)
 				)
 			)
@@ -8635,6 +9342,88 @@
 			(project "LoRa-Monitor"
 				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 63.5 163.83 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f65f9f57-33bb-4d3e-adfe-7f94109f3498")
+		(property "Reference" "GP0"
+			(at 64.77 162.5599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 64.77 165.0999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2"
+			(at 58.42 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 63.5 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a1a1de02-2544-4d7b-a122-6eeff5962351")
+		)
+		(pin "2"
+			(uuid "442d5986-22d4-4739-ab63-12d3662fecf6")
+		)
+		(instances
+			(project "LoRa-Monitor"
+				(path "/7510cc7d-c141-46d4-8947-7def3af8cf35/4bfcf40f-13fb-431f-9856-44eb253b594c"
+					(reference "GP0")
 					(unit 1)
 				)
 			)
