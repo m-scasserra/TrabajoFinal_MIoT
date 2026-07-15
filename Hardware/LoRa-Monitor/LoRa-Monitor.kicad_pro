@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 0.15,
+          "height": 0.4,
+          "width": 0.4
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -64,7 +64,7 @@
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
-          "remove_islands": 1,
+          "remove_islands": 0,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
         }
@@ -76,7 +76,24 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "shorting_items|125317200|85233200|faa6fe78-14d5-4470-a293-a882269fc8eb|7880e4cc-2cfb-49d3-92ed-cbeccfc26e2e",
+          "USB C Specs"
+        ],
+        [
+          "shorting_items|125317200|90133200|3baffa33-f904-4151-b805-2d599a135471|eddb38de-ccbb-482c-9ef7-c2e91e7b891f",
+          "USB C Specs"
+        ],
+        [
+          "solder_mask_bridge|125317200|85233200|faa6fe78-14d5-4470-a293-a882269fc8eb|7880e4cc-2cfb-49d3-92ed-cbeccfc26e2e",
+          "USB C Standard"
+        ],
+        [
+          "solder_mask_bridge|125317200|90133200|3baffa33-f904-4151-b805-2d599a135471|eddb38de-ccbb-482c-9ef7-c2e91e7b891f",
+          "USB C Standard"
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -158,7 +175,7 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.15,
         "min_track_width": 0.1,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.3,
@@ -664,7 +681,7 @@
         "uuid": "7510cc7d-c141-46d4-8947-7def3af8cf35"
       }
     ],
-    "used_designators": "",
+    "used_designators": "H1-6,C52-57,J15,#PWR78,#PWR113,#PWR144-150,Y1",
     "variants": []
   },
   "sheets": [

@@ -7456,7 +7456,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "DeviceComponents:L_0806_2016Metric"
+		(property "Footprint" "Inductor_SMD:L_1210_3225Metric_Pad1.42x2.65mm_HandSolder"
 			(at 232.41 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -11537,7 +11537,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "DeviceComponents:L_0806_2016Metric"
+		(property "Footprint" "Inductor_SMD:L_1210_3225Metric_Pad1.42x2.65mm_HandSolder"
 			(at 232.41 139.7 0)
 			(hide yes)
 			(show_name no)
