@@ -1,5 +1,12 @@
-idf_component_register(SRCS "main.cpp"
-                       PRIV_REQUIRES spi_flash
-                       INCLUDE_DIRS "."
-                       REQUIRES greeting led
+idf_component_register(
+    SRCS
+        "E22Driver.cpp"
+        "main.cpp"
+    INCLUDE_DIRS
+        "."
+        "../include"
+    REQUIRES
+        spi_flash
+        led
+        spi_controller
 )

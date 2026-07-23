@@ -11,31 +11,20 @@
 #include "driver/rmt_tx.h"
 
 #include "Led.h"
+#include "E22Driver.h"
 extern "C" void app_main(void);
 
 void app_main(void)
 {
     Led led(GPIO_NUM_48);
     led.begin();
-    led.setColor(Led::colors::green);
+    led.setColor(Led::colors::black);
     vTaskDelay(1000 / portTICK_PERIOD_MS);
+
+    E22 &e22 = E22::getInstance();
+    e22.Begin();
     while (true)
     {
-        led.setColor(Led::colors::red);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(Led::colors::green);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(Led::colors::blue);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(Led::colors::purple);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(Led::colors::cyan);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(Led::colors::yellow);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(Led::colors::white);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        led.setColor(102, 0, 204);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
