@@ -9,4 +9,5 @@ idf_component_register(
         spi_flash
         led
         spi_controller
+        lorawan
 )
