@@ -43,6 +43,7 @@ typedef struct TimerEvent_s
     bool IsNext2Expire;                  //! Is the next timer to expire
     void ( *Callback )( void* context ); //! Timer IRQ callback function
     void *Context;                       //! User defined data object pointer to pass back
+    void *Handle;
     struct TimerEvent_s *Next;           //! Pointer to the next Timer object.
 }TimerEvent_t;
 

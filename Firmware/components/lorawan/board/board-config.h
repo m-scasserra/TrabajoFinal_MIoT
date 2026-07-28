@@ -1,0 +1,26 @@
+#ifndef BOARD_CONFIG_H
+#define BOARD_CONFIG_H
+
+#define E22_SPI_HOST SPI2_HOST
+#define E22_PIN_MOSI 6
+#define E22_PIN_MISO 5
+#define E22_PIN_SCLK 4
+#define E22_PIN_NSS 7
+
+#define E22_PIN_BUSY 8
+#define E22_PIN_DIO1 10
+#define E22_PIN_NRST 17
+
+#define USE_DIO2_RF_SWITCH 1
+#if !USE_DIO2_RF_SWITCH
+#define E22_PIN_RXEN 16
+#define E22_PIN_TXEN 18
+#endif
+
+#define USE_TCXO 1
+#define TCXO_CTRL_VOLTAGE TCXO_CTRL_1_8V
+#define TCXO_WAKEUP_TIME_MS 5
+
+#define E22_SPI_CLOCK_HZ (1 * 1000 * 1000)
+
+#endif

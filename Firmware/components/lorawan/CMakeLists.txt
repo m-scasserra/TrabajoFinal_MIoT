@@ -3,25 +3,35 @@ set(LORAMAC "loramac")
 idf_component_register(
     SRCS
         "LoRaWAN.cpp"
+        ###
         "board/sx126x-board.c"
+        "board/rtc-se-stubs.c"
+        "board/board.c"
         "board/spi-bridge.cpp"
-        "board/timer.cpp"
-        "board/lorawan-task.cpp"
+        "board/timer.c"
+        "board/lorawan-task.c"
+        ###
         "${LORAMAC}/mac/LoRaMac.c"
         "${LORAMAC}/mac/LoRaMacAdr.c"
+        "${LORAMAC}/mac/LoRaMacClassB.c"
         "${LORAMAC}/mac/LoRaMacCommands.c"
         "${LORAMAC}/mac/LoRaMacConfirmQueue.c"
         "${LORAMAC}/mac/LoRaMacCrypto.c"
         "${LORAMAC}/mac/LoRaMacParser.c"
         "${LORAMAC}/mac/LoRaMacSerializer.c"
+        ###
         "${LORAMAC}/mac/region/Region.c"
         "${LORAMAC}/mac/region/RegionCommon.c"
+        "${LORAMAC}/mac/region/RegionBaseUS.c"
         "${LORAMAC}/mac/region/RegionAU915.c"
+        ###
         "${LORAMAC}/radio/sx126x/sx126x.c"
         "${LORAMAC}/radio/sx126x/radio.c"
+        ###
         "${LORAMAC}/system/systime.c"
         "${LORAMAC}/system/nvmm.c"
-        #"${LORAMAC}/system/gpio.c"
+        "${LORAMAC}/boards/mcu/utilities.c"
+        ###
         "${LORAMAC}/peripherals/soft-se/soft-se.c"
         "${LORAMAC}/peripherals/soft-se/aes.c"
         "${LORAMAC}/peripherals/soft-se/cmac.c"
@@ -38,7 +48,9 @@ idf_component_register(
     REQUIRES
         esp_driver_gpio
         esp_timer
+        esp_common
         freertos
+        esp_hw_support
         spi_controller
 )
 
@@ -46,4 +58,5 @@ target_compile_definitions(${COMPONENT_LIB} PRIVATE
     REGION_AU915
     ACTIVE_REGION=LORAMAC_REGION_AU915
     SOFT_SE
+    #LORAMAC_CLASSB_ENABLED=0
 )

@@ -18,6 +18,8 @@
 bool spi_bridge_init(void);
 bool spi_bridge_xfer(uint8_t *tx, uint8_t *rx, uint8_t len);
 
+extern TaskHandle_t s_radioTask;
+
 #define XFER_MAX 260
 static uint8_t s_txbuf[XFER_MAX];
 static uint8_t s_rxbuf[XFER_MAX];
@@ -26,13 +28,15 @@ static DioIrqHandler *s_dioIrq;
 
 extern SX126x_t SX126x;
 
+static RadioOperatingModes_t s_operatingMode = MODE_STDBY_RC;
+
 void SX126xWaitOnBusy(void)
 {
     int guard = 0;
-    while (gpio_get_level(SX126x.BUSY.pin) == 1)
+    while (gpio_get_level(E22_PIN_BUSY) == 1)
     {
         esp_rom_delay_us(1);
-        if (++guard > 10000)
+        if (++guard > 30000)
         {
             ESP_LOGW(TAG, "SX126xWaitOnBusy: timeout");
             break;
@@ -44,14 +48,14 @@ void SX126xReset(void)
 {
     vTaskDelay(pdMS_TO_TICKS(2));
     gpio_set_direction(E22_PIN_NRST, GPIO_MODE_OUTPUT);
-    gpio_set_level(SX126x.Reset.pin, 0);
+    gpio_set_level(E22_PIN_NRST, 0);
     vTaskDelay(pdMS_TO_TICKS(2));
-    gpio_set_level(SX126x.Reset.pin, 1);
+    gpio_set_level(E22_PIN_NRST, 1);
     vTaskDelay(pdMS_TO_TICKS(6));
     SX126xWaitOnBusy();
 }
 
-void SX126xWakeUp(void)
+void SX126xWakeup(void)
 {
     s_txbuf[0] = RADIO_GET_STATUS;
     s_txbuf[1] = 0x00;
@@ -266,8 +270,10 @@ bool SX126xCheckRfFrequency(uint32_t frequency)
 static void IRAM_ATTR dio1_isr(void *arg)
 {
     (void)arg;
-    extern void notify_radio_irq_from_isr(void);
-    notify_radio_irq_from_isr();
+    gpio_intr_disable(E22_PIN_DIO1);
+    BaseType_t hpw = pdFALSE;
+    vTaskNotifyGiveFromISR(s_radioTask, &hpw); // necesitás s_radioTask visible aca
+    portYIELD_FROM_ISR(hpw);
 }
 
 void SX126xIoInit(void)
@@ -296,9 +302,10 @@ void SX126xIoInit(void)
     }
 }
 
-void SX126xIoIrqInit(DioIrqHandler dioirq)
+void SX126xIoIrqInit(DioIrqHandler dioIrq)
 {
-    s_dioIrq = dioirq;
+    ESP_LOGI(TAG, "SX126xIoIrqInit llamado, handler=%p", dioIrq);
+    s_dioIrq = dioIrq;
 
     gpio_config_t io = {};
     io.pin_bit_mask = (1ULL << E22_PIN_DIO1);
@@ -334,4 +341,36 @@ void SX126xDbgPinRxWrite(bool state) { (void)state; }
 uint32_t SX126xGetDio1PinState(void)
 {
     return gpio_get_level(E22_PIN_DIO1);
+}
+
+RadioOperatingModes_t SX126xGetOperatingMode(void)
+{
+    return s_operatingMode;
+}
+
+void SX126xSetOperatingMode(RadioOperatingModes_t mode)
+{
+    s_operatingMode = mode;
+
+#if !USE_DIO2_RF_SWITCH
+    SX126xSetAndtSw(mode);
+#endif
+}
+
+void SX126xSetRfTxPower(int8_t power)
+{
+    if (power > 22)
+    {
+        power = 22;
+    }
+    if (power < -3)
+    {
+        power = -3;
+    }
+    SX126xSetTxParams(10, RADIO_RAMP_40_US);
+}
+
+uint8_t SX126xGetDeviceId(void)
+{
+    return SX1262;
 }
