@@ -13,12 +13,15 @@ public sealed class AuthService(NpgsqlConnection db, ITokenService tokens) : IAu
     {
         var user = await db.QuerySingleOrDefaultAsync<UserRow>(
             """
-            SELECT id, email, password_hash, role, org_id, active
+            SELECT id, email, password_hash, role, org_id, active, email_verified_at
             FROM general.users WHERE email = @Email
             """,
             new { req.Email });
 
-        if (user is null || !BCrypt.Net.BCrypt.Verify(req.Password, user.PasswordHash) || !user.Active)
+        if (user is null
+            || user.EmailVerifiedAt is null
+            || !BCrypt.Net.BCrypt.Verify(req.Password, user.PasswordHash)
+            || !user.Active)
             return null;
 
         var accessToken = tokens.GenerateJwtToken(user.Id, user.Role, user.OrgId);
@@ -87,6 +90,62 @@ public sealed class AuthService(NpgsqlConnection db, ITokenService tokens) : IAu
                 UserAgent = userAgent,
                 ExpiresAt = DateTime.UtcNow.AddDays(7)
             });
+    }
+
+    public async Task<bool> ConfirmAccountAsync(string rawToken, string newPassword)
+    {
+        var tokenHash = tokens.HashToken(rawToken);
+
+        if (db.State != System.Data.ConnectionState.Open)
+            await db.OpenAsync();
+
+        await using var tx = await db.BeginTransactionAsync();
+
+        try
+        {
+            // Check if the token exists, is of type EMAIL_VERIFICATION, is not used, and is not expired
+            var row = await db.QuerySingleOrDefaultAsync<(Guid TokenId, Guid UserId)>(
+                """
+                SELECT id AS TokenId, user_id AS UserId
+                FROM general.user_tokens
+                WHERE token_hash = @Hash
+                    AND type = 'EMAIL_VERIFICATION'
+                    AND used_at IS NULL
+                    AND expires_at > NOW();
+                """,
+                new { Hash = tokenHash }, tx);
+
+            if (row.UserId == Guid.Empty)
+            {
+                await tx.RollbackAsync();
+                return false;
+            }
+
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
+
+            // Update user's password and mark email as verified
+            await db.ExecuteAsync(
+                """
+                UPDATE general.users
+                SET password_hash = @Hash,
+                    email_verified_at = NOW()
+                WHERE id = @UserId;
+                """,
+                new { Hash = passwordHash, UserId = row.UserId }, tx);
+
+            // Mark the token as used
+            await db.ExecuteAsync(
+                "UPDATE general.user_tokens SET used_at = NOW() WHERE id = @TokenId",
+                new { TokenId = row.TokenId }, tx);
+
+            await tx.CommitAsync();
+            return true;
+        }
+        catch
+        {
+            await tx.RollbackAsync();
+            throw;
+        }
     }
 
 }

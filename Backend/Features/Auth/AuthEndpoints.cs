@@ -52,6 +52,15 @@ public static class AuthEndpoints
 
             return Results.Ok(new { message = "Logged out successfully" });
         });
+
+        group.MapPost("/confirm-account", async (
+            ConfirmAccountRequest req, IAuthService auth) =>
+        {
+            var ok = await auth.ConfirmAccountAsync(req.Token, req.Password);
+            return ok
+                ? Results.Ok(new { message = "Account confirmed successfully. You can now log in." })
+                : Results.BadRequest(new { message = "Invalid or expired token." });
+        });
     }
 
     private static (string? ip, string? userAgent) GetClientInfo(HttpContext ctx) =>
