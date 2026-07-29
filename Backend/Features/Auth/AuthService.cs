@@ -148,4 +148,18 @@ public sealed class AuthService(NpgsqlConnection db, ITokenService tokens) : IAu
         }
     }
 
+    public async Task<UserDto?> GetCurrentAsync(Guid userId)
+    {
+        var user = await db.QuerySingleOrDefaultAsync<UserRow>(
+            """
+            SELECT id, email, password_hash, role, org_id, active, email_verified_at
+            FROM general.users WHERE id = @UserId
+            """,
+            new { UserId = userId });
+
+        if (user is null || !user.Active || user.EmailVerifiedAt is null)
+            return null;
+
+        return new UserDto(user.Id, user.Email, user.Role);
+    }
 }

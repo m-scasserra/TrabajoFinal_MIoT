@@ -8,6 +8,7 @@ public interface IAuthService
     Task<RefreshResult?> RefreshAsync(string rawRefreshToken, string? ip, string? userAgent);
     Task LogoutAsync(string rawRefreshToken);
     Task<bool> ConfirmAccountAsync(string rawToken, string newPassword);
+    Task<UserDto?> GetCurrentAsync(Guid userId);
 
 }
 

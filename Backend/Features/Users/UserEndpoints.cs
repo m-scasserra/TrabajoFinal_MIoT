@@ -1,5 +1,6 @@
 using Backend.Common.Security;
 using Backend.Features.Users.Dtos;
+using Backend.Features.Auth;
 
 namespace Backend.Features.Users;
 
@@ -46,5 +47,12 @@ public static class UserEndpoints
                 return Results.BadRequest(new { message = ex.Message });
             }
         });
+
+        group.MapGet("/me", async (CurrentUser me, IAuthService auth) =>
+        {
+            var user = await auth.GetCurrentAsync(me.UserId);
+            return user is null ? Results.NotFound() : Results.Ok(user);
+        })
+        .RequireAuthorization();
     }
 }
