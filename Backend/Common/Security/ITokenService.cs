@@ -5,4 +5,5 @@ public interface ITokenService
     string GenerateJwtToken(Guid userId, string role, Guid? orgId);
     string GenerateRefreshToken();
     string HashToken(string token);
+    string GenerateInvitationToken();
 }
