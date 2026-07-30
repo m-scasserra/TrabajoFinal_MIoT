@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, useRef, type ReactNode } from 'react';
 import { login as apiLogin, logout as apiLogout, silentRefresh, type User } from '../../api/endpoints/auth';
 import { apiFetch } from '../../api/client';
 
@@ -18,8 +18,12 @@ async function fetchMe(): Promise<User> {
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
+    const didInit = useRef(false);
 
     useEffect(() => {
+        if (didInit.current) return;
+        didInit.current = true;
+        
         (async () => {
             const ok = await silentRefresh();
             if (ok) {
