@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router';
 import { ProtectedRoute } from './routes/ProtectedRoute';
+import { Layout } from './components/Layout';
 import { LoginPage } from './features/auth/pages/LoginPage';
 
 export default function App() {
@@ -8,7 +9,9 @@ export default function App() {
       <Route path="/login" element={<LoginPage />} />
 
       <Route element={<ProtectedRoute />}>
-        <Route path="/" element={<div>Home</div>} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<div>Home</div>} />
+        </Route>
       </Route>
     </Routes>
   )
