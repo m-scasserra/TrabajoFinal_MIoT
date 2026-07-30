@@ -14,8 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // --- Config ---
-builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
-var jwt = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
+var jwt = builder.Configuration.GetSection("Jwt").Get<JwtSettings>()!;
 
 // --- Super Admin Seed ---
 builder.Services.Configure<SuperAdminSeedSettings>(builder.Configuration.GetSection("Seed:SuperAdmin"));
