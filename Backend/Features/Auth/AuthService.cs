@@ -13,7 +13,7 @@ public sealed class AuthService(NpgsqlConnection db, ITokenService tokens) : IAu
     {
         var user = await db.QuerySingleOrDefaultAsync<UserRow>(
             """
-            SELECT id, email, password_hash, role, org_id, active, email_verified_at
+            SELECT id AS Id, email AS Email, password_hash AS PasswordHash, role AS Role, org_id AS OrgId, active AS Active, email_verified_at AS EmailVerifiedAt
             FROM general.users WHERE email = @Email
             """,
             new { req.Email });
@@ -80,7 +80,7 @@ public sealed class AuthService(NpgsqlConnection db, ITokenService tokens) : IAu
             """
             INSERT INTO general.user_sessions
                 (user_id, refresh_token_hash, ip_address, user_agent, expires_at)
-            VALUES (@UserId, @Hash, @IpAdress::inet, @UserAgent, @ExpiresAt);
+            VALUES (@UserId, @Hash, @IPAddress::inet, @UserAgent, @ExpiresAt);
             """,
             new
             {
