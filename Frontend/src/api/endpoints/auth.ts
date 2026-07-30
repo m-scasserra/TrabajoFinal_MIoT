@@ -11,13 +11,13 @@ interface AuthResponse {
     user: User;
 }
 
-export async function login(username: string, password: string): Promise<User> {
+export async function login(email: string, password: string): Promise<User> {
     const data = await apiFetch<AuthResponse>('/auth/login', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
         skipAuthRetry: true,
     });
-
+    
     tokenStore.set(data.accessToken);
     return data.user;
 }
