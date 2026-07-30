@@ -26,7 +26,7 @@ public static class UserEndpoints
             try
             {
                 var id = await users.CreateAsync(me, req);
-                return Results.Created($"/api/v1/users/{id}", new { Id = id });
+                return Results.Created($"/api/v1/users/{id}", new { id });
             }
             catch (InvalidOperationException ex)
             {
@@ -47,12 +47,5 @@ public static class UserEndpoints
                 return Results.BadRequest(new { message = ex.Message });
             }
         });
-
-        group.MapGet("/me", async (CurrentUser me, IAuthService auth) =>
-        {
-            var user = await auth.GetCurrentAsync(me.UserId);
-            return user is null ? Results.NotFound() : Results.Ok(user);
-        })
-        .RequireAuthorization();
     }
 }
