@@ -61,6 +61,13 @@ public static class AuthEndpoints
                 ? Results.Ok(new { message = "Account confirmed successfully. You can now log in." })
                 : Results.BadRequest(new { message = "Invalid or expired token." });
         });
+
+        group.MapGet("/me", async (CurrentUser me, IAuthService auth) =>
+        {
+            var user = await auth.GetCurrentAsync(me.UserId);
+            return user is null ? Results.NotFound() : Results.Ok(user);
+        })
+        .RequireAuthorization();
     }
 
     private static (string? ip, string? userAgent) GetClientInfo(HttpContext ctx) =>
