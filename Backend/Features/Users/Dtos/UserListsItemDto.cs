@@ -3,7 +3,7 @@ namespace Backend.Features.Users.Dtos;
 public record UserListItemDto(
     Guid Id,
     Guid? OrgId,
-    string FullName,
+    string Fullname,
     string Email,
     string Role,
     bool Active,

@@ -72,13 +72,13 @@ public sealed class UserService(
             var userId = await db.ExecuteScalarAsync<Guid>(
                 """
                 INSERT INTO general.users (org_id, fullname, email, password_hash, role)
-                VALUES (@OrgId, @FullName, @Email, @PasswordHash, @Role::general.user_role)
+                VALUES (@OrgId, @Fullname, @Email, @PasswordHash, @Role::general.user_role)
                 RETURNING id;
                 """,
                 new
                 {
                     OrgId = orgId,
-                    req.FullName,
+                    req.Fullname,
                     req.Email,
                     PasswordHash = UnusablePasswordHash,
                     req.Role
@@ -100,7 +100,7 @@ public sealed class UserService(
             await tx.CommitAsync();
 
             var link = $"{_app.FrontendBaseUrl}/confirm-account?token={rawToken}";
-            await email.SendInvitationAsync(req.Email, req.FullName, link);
+            await email.SendInvitationAsync(req.Email, req.Fullname, link);
 
             return userId;
         }
