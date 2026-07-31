@@ -30,14 +30,14 @@ export function getUser(id: string): Promise<UserListItem> {
     return apiFetch<UserListItem>(`/users/${id}`, { method: 'GET' });
 }
 
-export function createUsers(payload: CreateUserPayload): Promise<{ id: string }> {
+export function createUser(payload: CreateUserPayload): Promise<{ id: string }> {
     return apiFetch<{ id: string }>('/users', {
         method: 'POST',
         body: JSON.stringify(payload),
     });
 }
 
-export function updateUsers(id: string, payload: UpdateUserPayload): Promise<void> {
+export function updateUser(id: string, payload: UpdateUserPayload): Promise<void> {
     return apiFetch<void>(`/users/${id}`,
         {
             method: 'PUT',
