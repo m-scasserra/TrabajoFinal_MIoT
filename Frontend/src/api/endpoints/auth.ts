@@ -41,7 +41,7 @@ export async function silentRefresh(): Promise<boolean> {
 }
 
 export async function confirmAccount(token: string, password: string): Promise<void> {
-    await apiFetch('/auth/confirm', {
+    await apiFetch('/auth/confirm-account', {
         method: 'POST',
         body: JSON.stringify({ token, password }),
         skipAuthRetry: true,
