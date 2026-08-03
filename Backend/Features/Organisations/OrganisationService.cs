@@ -30,7 +30,7 @@ public sealed class OrganisationService(
             // Check if user with this email already exists
             var exists = await db.ExecuteScalarAsync<bool>(
                 "SELECT EXISTS(SELECT 1 FROM general.users WHERE email = @Email)",
-                new { req.AdminEmail }, tx);
+                new { Email = req.AdminEmail }, tx);
 
             if (exists)
                 throw new InvalidOperationException("User with this email already exists");
@@ -42,7 +42,7 @@ public sealed class OrganisationService(
                 VALUES (@Name, @Cuit)
                 RETURNING id AS Id, name AS Name, cuit AS Cuit, active AS Active, created_at AS CreatedAt;
                 """,
-                new { req.Name, req.Cuit }, tx);
+                new { Name = req.Name, Cuit = req.Cuit }, tx);
 
             var userId = await db.ExecuteScalarAsync<Guid>(
                 """
