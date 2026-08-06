@@ -80,6 +80,11 @@ export function UsersListPage() {
                 <TableCell className="text-muted-foreground">
                   {formatDate(u.createdAt)}
                 </TableCell>
+                <TableCell className="text-right">
+                  <Button asChild variant="ghost" size="sm">
+                    <Link to={`/users/${u.id}/edit`}>Edit</Link>
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

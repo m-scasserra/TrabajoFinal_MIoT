@@ -2,6 +2,15 @@ import { useState, type FormEvent } from "react";
 import { useSearchParams, useNavigate, Link } from "react-router";
 import { confirmAccount } from "../../../api/endpoints/auth";
 import { ApiError } from "../../../api/client";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FormField } from "@/components/FormField";
 
 const MIN_PASSWORD = 8;
 
@@ -18,41 +27,40 @@ export function ConfirmAccountPage() {
 
   if (!token) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-        <div className="w-full max-w-sm bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
-          <h1 className="text-lg font-semibold text-gray-900 mb-2">
-            Invalid Confirmation Link.
-          </h1>
-          <p className="text-sm text-gray-600 mb-4">
+      <CenteredCard>
+        <CardHeader>
+          <CardTitle>Invalid Confirmation Link</CardTitle>
+          <CardDescription>
             The confirmation link is invalid or incomplete.
-          </p>
-          <Link to="/login" className="text-sm text-blue-600 hover:underline">
-            Go to Login.
-          </Link>
-        </div>
-      </div>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button asChild variant="outline" className="w-full">
+            <Link to="/login">Go to Login.</Link>
+          </Button>
+        </CardContent>
+      </CenteredCard>
     );
   }
 
   if (done) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-        <div className="w-full max-w-sm bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
-          <h1 className="text-lg font-semibold text-gray-900 mb-2">
-            Account Confirmed
-          </h1>
-          <p className="text-sm text-gray-600 mb-4">
+      <CenteredCard>
+        <CardHeader>
+          <CardTitle>Account Confirmed</CardTitle>
+          <CardDescription>
             Your password has been set. You can now log in.
-          </p>
-          <button
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button
+            className="w-full"
             onClick={() => navigate("/login", { replace: true })}
-            className="rounded-lg bg-blue-600 text-white text-sm font-medium px-4 py-2.5
-                       hover:bg-blue-700 transition-colors"
           >
-            Log In
-          </button>
-        </div>
-      </div>
+            Go to Login.
+          </Button>
+        </CardContent>
+      </CenteredCard>
     );
   }
 
@@ -65,9 +73,9 @@ export function ConfirmAccountPage() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const validationError = validate();
-    if (validationError) {
-      setError(validationError);
+    const v = validate();
+    if (v) {
+      setError(v);
       return;
     }
 
@@ -90,79 +98,58 @@ export function ConfirmAccountPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="w-full max-w-sm bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-        <h1 className="text-2xl font-semibold text-gray-900 mb-1">
-            Confirm Account
-        </h1>
-        <p className="text-sm text-gray-600 mb-6">
+    <CenteredCard>
+      <CardHeader>
+        <CardTitle className="text-2xl">Confirm Account</CardTitle>
+        <CardDescription>
           Define your password to activate the account.
-        </p>
-
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              autoComplete="new-password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              disabled={submitting}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                         disabled:bg-gray-100"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="confirm"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Repeat Password
-            </label>
-            <input
-              id="confirm"
-              type="password"
-              autoComplete="new-password"
-              required
-              value={confirm}
-              onChange={(e) => setConfirm(e.target.value)}
-              disabled={submitting}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                         disabled:bg-gray-100"
-            />
-          </div>
+          <FormField
+            id="password"
+            label="Password"
+            type="password"
+            autoComplete="new-password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            disabled={submitting}
+          />
+          <FormField
+            id="confirm"
+            label="Confirm Password"
+            type="password"
+            autoComplete="new-password"
+            required
+            value={confirm}
+            onChange={(e) => setConfirm(e.target.value)}
+            disabled={submitting}
+          />
 
           {error && (
-            <div
+            <p
               role="alert"
-              className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2"
+              className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md px-3 py-2"
             >
               {error}
-            </div>
+            </p>
           )}
 
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full rounded-lg bg-blue-600 text-white text-sm font-medium py-2.5
-                       hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500
-                       focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed
-                       transition-colors"
-          >
+          <Button type="submit" className="w-full" disabled={submitting}>
             {submitting ? "Confirming…" : "Confirm Account"}
-          </button>
+          </Button>
         </form>
-      </div>
+      </CardContent>
+    </CenteredCard>
+  );
+}
+
+function CenteredCard({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-muted/30 px-4">
+      <Card className="w-full max-w-sm">{children}</Card>
     </div>
   );
 }
