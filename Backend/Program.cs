@@ -17,13 +17,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 var jwt = builder.Configuration.GetSection("Jwt").Get<JwtSettings>()!;
 
-// --- Super Admin Seed ---
-builder.Services.Configure<SuperAdminSeedSettings>(builder.Configuration.GetSection("Seed:SuperAdmin"));
-builder.Services.AddScoped<DbSeeder>();
-
 // --- Database ---
 var connectionString = builder.Configuration.GetConnectionString("PostgresDb");
 builder.Services.AddScoped(_ => new NpgsqlConnection(connectionString));
+
+// --- Super Admin Seed ---
+builder.Services.Configure<SuperAdminSeedSettings>(builder.Configuration.GetSection("Seed:SuperAdmin"));
+builder.Services.AddScoped<DbSeeder>();
 
 // --- Security ---
 builder.Services.AddHttpContextAccessor();
