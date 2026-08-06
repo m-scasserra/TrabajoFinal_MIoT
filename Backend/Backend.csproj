@@ -9,7 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="Chirpstack.Api" Version="4.100.2" />
     <PackageReference Include="Dapper" Version="2.1.79" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.83.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
     <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
