@@ -9,6 +9,6 @@ public record GatewayDto(
     string SyncStatus,
     string? SyncError,
     double? Latitude,
-    double? Longitude
+    double? Longitude,
     DateTime? LastSeen,
     DateTime CreatedAt);

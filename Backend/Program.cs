@@ -1,14 +1,20 @@
 using Backend.Common.Security;
 using Backend.Common.Email;
 using Backend.Common.Seed;
+using Backend.Common.ChirpStack;
+using Backend.Common.Sync;
 using Backend.Common;
 using Backend.Features.Auth;
 using Backend.Features.Organisations;
 using Backend.Features.Users;
+using Backend.Features.Gateways;
+using Backend.Features.Nodes;
+using Backend.Features.DeviceProfiles;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +44,22 @@ builder.Services.AddScoped<IOrganisationService, OrganisationService>();
 
 // --- User Service ---
 builder.Services.AddScoped<IUserService, UserService>();
+
+// --- Gateway Service ---
+builder.Services.Configure<ChirpStackSettings>(builder.Configuration.GetSection("ChirpStack"));
+builder.Services.AddSingleton<IChirpStackClient, ChirpStackClient>();
+builder.Services.AddScoped<IGatewayService, GatewayService>();
+
+// --- Node Service ---
+builder.Services.Configure<CryptoSettings>(builder.Configuration.GetSection("Crypto"));
+builder.Services.AddSingleton<IAppKeyCipher, AppKeyCipher>();
+builder.Services.AddScoped<INodeService, NodeService>();
+
+// --- Device profile Service ---
+builder.Services.AddScoped<IDeviceProfileService, DeviceProfileService>();
+
+// --- Worker Service ---
+builder.Services.AddHostedService<ChirpStackSyncWorker>();
 
 // --- Jwt Authentication ---
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -78,5 +100,8 @@ app.UseAuthorization();
 app.MapAuthEndpoints();
 app.MapOrganisationsEndpoints();
 app.MapUserEndpoints();
+app.MapGatewayEndpoints();
+app.MapNodeEndpoints();
+app.MapDeviceProfileEndpoints();
 
 app.Run();

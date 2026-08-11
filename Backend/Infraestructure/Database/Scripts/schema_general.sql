@@ -21,6 +21,78 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- =====================================================================
+-- Custom ENUM types
+-- =====================================================================
+
+CREATE TYPE "general".user_role AS ENUM (
+    'SUPERADMIN',
+    'ORG_ADMIN',
+    'OPERATOR'
+);
+
+CREATE TYPE "general".token_type AS ENUM (
+    'EMAIL_VERIFICATION',
+    'PASSWORD_RESET',
+    'EMAIL_CHANGE'
+);
+
+CREATE TYPE "general".gateway_state AS ENUM (
+    'ACTIVE',
+    'INACTIVE',
+    'MAINTENANCE'
+);
+
+CREATE TYPE "general".sync_status AS ENUM (
+    'PENDING',
+    'SYNCED',
+    'FAILED',
+    'PENDING_DELETE',
+    'DELETE_FAILED'
+);
+
+CREATE TYPE "general".node_type AS ENUM (
+    'MODBUS_RTU',
+    'PULSE',
+    'ANALOG'
+);
+
+CREATE TYPE "general".node_state AS ENUM (
+    'ACTIVE',
+    'INACTIVE',
+    'MAINTENANCE'
+);
+
+CREATE TYPE "general".alarm_type AS ENUM (
+    'VOLTAGE_MAX',
+    'VOLTAGE_MIN',
+    'CURRENT_MAX',
+    'CURRENT_MIN',
+    'POWER_MAX',
+    'POWER_MIN',
+    'POWER_OUTAGE'
+);
+
+CREATE TYPE "general".alarm_severity AS ENUM (
+    'INFO',
+    'WARNING',
+    'CRITICAL'
+);
+
+CREATE TYPE "general".notification_method AS ENUM (
+    'MAIL',
+    'TELEGRAM'
+);
+
+CREATE TYPE "general".lorawan_mac_version AS ENUM (
+    'LORAWAN_1_0_0',
+    'LORAWAN_1_0_1',
+    'LORAWAN_1_0_2',
+    'LORAWAN_1_0_3',
+    'LORAWAN_1_0_4',
+    'LORAWAN_1_1_0'
+);
+
+-- =====================================================================
 -- Table: organisations
 -- =====================================================================
 
@@ -40,12 +112,6 @@ CREATE TRIGGER trg_organisations_edited_at
 -- =====================================================================
 -- Table: users
 -- =====================================================================
-
-CREATE TYPE "general".user_role AS ENUM (
-    'SUPERADMIN',
-    'ORG_ADMIN',
-    'OPERATOR'
-);
 
 CREATE TABLE "general".users (
     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -81,12 +147,6 @@ CREATE TRIGGER trg_users_edited_at
 -- =====================================================================
 -- Table: user_tokens
 -- =====================================================================
-
-CREATE TYPE "general".token_type AS ENUM (
-    'EMAIL_VERIFICATION',
-    'PASSWORD_RESET',
-    'EMAIL_CHANGE'
-);
 
 CREATE TABLE "general".user_tokens (
     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -131,55 +191,8 @@ CREATE INDEX idx_user_sessions_user_id ON "general".user_sessions (user_id);
 CREATE INDEX idx_user_sessions_active ON "general".user_sessions (user_id) WHERE revoked_at IS NULL;
 
 -- =====================================================================
--- Table: nodes
--- =====================================================================
-
-CREATE TYPE "general".node_type AS ENUM (
-    'MODBUS_RTU',
-    'PULSE',
-    'ANALOG'
-);
-
-CREATE TYPE "general".node_state AS ENUM (
-    'ACTIVE',
-    'INACTIVE',
-    'MAINTENANCE'
-);
-
-CREATE TABLE "general".nodes (
-    dev_eui             VARCHAR(16) PRIMARY KEY NOT NULL,
-    org_id              UUID NOT NULL,
-    alias               VARCHAR(100) NOT NULL,
-    meter_type          "general".node_type NULL,
-    config              JSONB NULL,
-    freq_minutes        INT NULL,
-    operative_state     "general".node_state DEFAULT 'INACTIVE' NOT NULL,
-    coordinates         geometry(Point, 4326) NULL,
-    created_at          TIMESTAMPTZ DEFAULT now() NOT NULL,
-    edited_at           TIMESTAMPTZ DEFAULT now() NOT NULL,
-
-    CONSTRAINT fk_nodes_organisation
-        FOREIGN KEY (org_id)
-        REFERENCES "general".organisations(id)
-        ON DELETE CASCADE
-);
-
-CREATE INDEX idx_nodes_org_id ON "general".nodes (org_id);
-CREATE INDEX idx_nodes_coordinates ON "general".nodes USING GIST (coordinates);
-
-CREATE TRIGGER trg_nodes_edited_at
-    BEFORE UPDATE ON "general".nodes
-    FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
-
--- =====================================================================
 -- Table: gateways
 -- =====================================================================
-
-CREATE TYPE "general".gateway_state AS ENUM (
-    'ACTIVE',
-    'INACTIVE',
-    'MAINTENANCE'
-);
 
 CREATE TABLE "general".gateways (
     gateway_eui         VARCHAR(16) PRIMARY KEY NOT NULL,
@@ -191,6 +204,9 @@ CREATE TABLE "general".gateways (
     created_at          TIMESTAMPTZ DEFAULT now() NOT NULL,
     edited_at           TIMESTAMPTZ DEFAULT now() NOT NULL,
     last_seen           TIMESTAMPTZ NULL,
+    sync_status         "general".sync_status DEFAULT 'PENDING' NOT NULL,
+    synced_at           TIMESTAMPTZ NULL,
+    sync_error          TEXT NULL,
 
     CONSTRAINT fk_gateway_organisation
         FOREIGN KEY (org_id)
@@ -200,34 +216,99 @@ CREATE TABLE "general".gateways (
 
 CREATE INDEX idx_gateways_org_id ON "general".gateways (org_id);
 CREATE INDEX idx_gateways_coordinates ON "general".gateways USING GIST (coordinates);
+CREATE INDEX idx_gateways_sync_status ON "general".gateways (sync_status) WHERE sync_status <> 'SYNCED';
 
 CREATE TRIGGER trg_gateways_edited_at
     BEFORE UPDATE ON "general".gateways
     FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
 
 -- =====================================================================
+-- Table: nodes
+-- =====================================================================
+
+CREATE TABLE "general".nodes (
+    id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    mac_address         VARCHAR(12) NOT NULL,
+    dev_eui             VARCHAR(16) NULL,
+    hw_revision         SMALLINT NOT NULL,
+    fw_revision         SMALLINT NOT NULL,
+    app_key_encrypted   BYTEA NOT NULL,
+    device_profile_id   UUID NULL,
+    org_id              UUID NULL,
+    alias               VARCHAR(100) NOT NULL,
+    meter_type          "general".node_type NULL,
+    config              JSONB NULL,
+    freq_minutes        INT NULL,
+    operative_state     "general".node_state DEFAULT 'INACTIVE' NOT NULL,
+    coordinates         geometry(Point, 4326) NULL,
+    created_at          TIMESTAMPTZ DEFAULT now() NOT NULL,
+    edited_at           TIMESTAMPTZ DEFAULT now() NOT NULL,
+    sync_status         "general".sync_status DEFAULT 'PENDING' NOT NULL,
+    synced_at           TIMESTAMPTZ NULL,
+    sync_error          TEXT NULL,
+
+    CONSTRAINT fk_nodes_organisation
+        FOREIGN KEY (org_id)
+        REFERENCES "general".organisations(id)
+        ON DELETE CASCADE,
+    
+    CONSTRAINT fk_nodes_device_profile
+        FOREIGN KEY (device_profile_id)
+        REFERENCES "general".device_profiles(id)
+        ON DELETE RESTRICT
+);
+
+CREATE INDEX idx_nodes_org_id ON "general".nodes (org_id);
+CREATE INDEX idx_nodes_coordinates ON "general".nodes USING GIST (coordinates);
+CREATE UNIQUE INDEX idx_nodes_mac ON "general".nodes (mac_address);
+CREATE INDEX idx_nodes_available ON "general".nodes (org_id) WHERE org_id IS NULL;
+CREATE INDEX idx_nodes_sync_status ON "general".nodes (sync_status) WHERE sync_status <> 'SYNCED';
+
+CREATE TRIGGER trg_nodes_edited_at
+    BEFORE UPDATE ON "general".nodes
+    FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
+
+-- =====================================================================
+-- Table: device_profiles
+-- =====================================================================
+
+CREATE TABLE "general".device_profiles(
+    id UUID                     PRIMARY KEY DEFAULT gen_random_uuid(),
+    chirpstack_id UUID          NULL UNIQUE,
+    name                        VARCHAR(100) NOT NULL,
+    region                      VARCHAR(20) NOT NULL,
+    mac_version                 "general".lorawan_mac_version NOT NULL,
+    reg_params_revision         VARCHAR(20) NOT NULL,
+    region_config_id            VARCHAR(50) NULL,
+    adr_algorithm_id            VARCHAR(50) NOT NULL DEFAULT 'default',
+    uplink_interval             INT NOT NULL DEFAULT 3600,
+    device_status_req_interval  INT NOT NULL DEFAULT 1,
+    supports_otaa               BOOLEAN NOT NULL DEFAULT true,
+    flush_queue_on_activate     BOOLEAN NOT NULL DEFAULT true,
+    auto_detect_measurements    BOOLEAN NOT NULL DEFAULT true,
+    app_layer_params            JSONB NULL,
+    sync_status                 "general".sync_status DEFAULT 'PENDING' NOT NULL,
+    sync_error                  TEXT NULL,
+    synced_at                   TIMESTAMPTZ NULL,
+    created_at                  TIMESTAMPTZ DEFAULT now() NOT NULL,
+    edited_at                   TIMESTAMPTZ DEFAULT now() NOT NULL
+);
+
+CREATE INDEX idx_device_profiles_sync_status
+    ON "general".device_profiles (sync_status)
+    WHERE sync_status <> 'SYNCEd';
+
+CREATE TRIGGER trg_device_profiles_edited_at
+    BEFORE UPDATE ON "general".device_profiles
+    FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
+
+-- =====================================================================
 -- Table: alarms
 -- =====================================================================
 
-CREATE TYPE "general".alarm_type AS ENUM (
-    'VOLTAGE_MAX',
-    'VOLTAGE_MIN',
-    'CURRENT_MAX',
-    'CURRENT_MIN',
-    'POWER_MAX',
-    'POWER_MIN',
-    'POWER_OUTAGE'
-);
-
-CREATE TYPE "general".alarm_severity AS ENUM (
-    'INFO',
-    'WARNING',
-    'CRITICAL'
-);
-
 CREATE TABLE "general".alarms (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    dev_eui         VARCHAR(16) NOT NULL,
+    node_id         UUID NOT NULL,
     alarm           "general".alarm_type NOT NULL,
     threshold_min   NUMERIC(10, 2) NULL,
     threshold_max   NUMERIC(10, 2) NULL,
@@ -237,8 +318,8 @@ CREATE TABLE "general".alarms (
     edited_at       TIMESTAMPTZ DEFAULT now() NOT NULL,
 
     CONSTRAINT fk_alarms_nodes
-        FOREIGN KEY (dev_eui)
-        REFERENCES "general".nodes(dev_eui)
+        FOREIGN KEY (node_id)
+        REFERENCES "general".nodes(id)
         ON DELETE CASCADE,
 
     CONSTRAINT chk_alarm_thresholds CHECK (
@@ -248,7 +329,7 @@ CREATE TABLE "general".alarms (
     )
 );
 
-CREATE INDEX  idx_alarms_dev_eui ON "general".alarms (dev_eui);
+CREATE INDEX  idx_alarms_node_id ON "general".alarms (node_id);
 
 CREATE TRIGGER trg_alarms_edited_at
     BEFORE UPDATE ON "general".alarms
@@ -257,11 +338,6 @@ CREATE TRIGGER trg_alarms_edited_at
 -- =====================================================================
 -- Table: notifications
 -- =====================================================================
-
-CREATE TYPE "general".notification_method AS ENUM (
-    'MAIL',
-    'TELEGRAM'
-);
 
 CREATE TABLE "general".notifications (
     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
