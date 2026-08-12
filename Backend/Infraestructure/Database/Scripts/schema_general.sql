@@ -191,6 +191,41 @@ CREATE INDEX idx_user_sessions_user_id ON "general".user_sessions (user_id);
 CREATE INDEX idx_user_sessions_active ON "general".user_sessions (user_id) WHERE revoked_at IS NULL;
 
 -- =====================================================================
+-- Table: device_profiles
+-- =====================================================================
+
+CREATE TABLE "general".device_profiles(
+    id UUID                     PRIMARY KEY DEFAULT gen_random_uuid(),
+    chirpstack_id UUID          NULL UNIQUE,
+    name                        VARCHAR(100) NOT NULL,
+    region                      VARCHAR(20) NOT NULL,
+    mac_version                 "general".lorawan_mac_version NOT NULL,
+    reg_params_revision         VARCHAR(20) NOT NULL,
+    region_config_id            VARCHAR(50) NULL,
+    adr_algorithm_id            VARCHAR(50) NOT NULL DEFAULT 'default',
+    uplink_interval             INT NOT NULL DEFAULT 3600,
+    device_status_req_interval  INT NOT NULL DEFAULT 1,
+    supports_otaa               BOOLEAN NOT NULL DEFAULT true,
+    flush_queue_on_activate     BOOLEAN NOT NULL DEFAULT true,
+    auto_detect_measurements    BOOLEAN NOT NULL DEFAULT true,
+    app_layer_params            JSONB NULL,
+    sync_status                 "general".sync_status DEFAULT 'PENDING' NOT NULL,
+    sync_error                  TEXT NULL,
+    synced_at                   TIMESTAMPTZ NULL,
+    created_at                  TIMESTAMPTZ DEFAULT now() NOT NULL,
+    edited_at                   TIMESTAMPTZ DEFAULT now() NOT NULL
+);
+
+CREATE INDEX idx_device_profiles_sync_status
+    ON "general".device_profiles (sync_status)
+    WHERE sync_status <> 'SYNCED';
+
+CREATE TRIGGER trg_device_profiles_edited_at
+    BEFORE UPDATE ON "general".device_profiles
+    FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
+
+
+-- =====================================================================
 -- Table: gateways
 -- =====================================================================
 
@@ -266,40 +301,6 @@ CREATE INDEX idx_nodes_sync_status ON "general".nodes (sync_status) WHERE sync_s
 
 CREATE TRIGGER trg_nodes_edited_at
     BEFORE UPDATE ON "general".nodes
-    FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
-
--- =====================================================================
--- Table: device_profiles
--- =====================================================================
-
-CREATE TABLE "general".device_profiles(
-    id UUID                     PRIMARY KEY DEFAULT gen_random_uuid(),
-    chirpstack_id UUID          NULL UNIQUE,
-    name                        VARCHAR(100) NOT NULL,
-    region                      VARCHAR(20) NOT NULL,
-    mac_version                 "general".lorawan_mac_version NOT NULL,
-    reg_params_revision         VARCHAR(20) NOT NULL,
-    region_config_id            VARCHAR(50) NULL,
-    adr_algorithm_id            VARCHAR(50) NOT NULL DEFAULT 'default',
-    uplink_interval             INT NOT NULL DEFAULT 3600,
-    device_status_req_interval  INT NOT NULL DEFAULT 1,
-    supports_otaa               BOOLEAN NOT NULL DEFAULT true,
-    flush_queue_on_activate     BOOLEAN NOT NULL DEFAULT true,
-    auto_detect_measurements    BOOLEAN NOT NULL DEFAULT true,
-    app_layer_params            JSONB NULL,
-    sync_status                 "general".sync_status DEFAULT 'PENDING' NOT NULL,
-    sync_error                  TEXT NULL,
-    synced_at                   TIMESTAMPTZ NULL,
-    created_at                  TIMESTAMPTZ DEFAULT now() NOT NULL,
-    edited_at                   TIMESTAMPTZ DEFAULT now() NOT NULL
-);
-
-CREATE INDEX idx_device_profiles_sync_status
-    ON "general".device_profiles (sync_status)
-    WHERE sync_status <> 'SYNCEd';
-
-CREATE TRIGGER trg_device_profiles_edited_at
-    BEFORE UPDATE ON "general".device_profiles
     FOR EACH ROW EXECUTE FUNCTION "general".set_edited_at();
 
 -- =====================================================================
