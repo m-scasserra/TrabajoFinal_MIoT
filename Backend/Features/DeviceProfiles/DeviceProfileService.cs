@@ -12,26 +12,35 @@ public sealed class DeviceProfileService(
     ILogger<DeviceProfileService> logger) : IDeviceProfileService
 {
     private const string SelectBase = """
-        SELECT id AS Id, chirpstack_id AS ChirpStackId, name AS Name, region AS Region,
-               mac_version AS MacVersion, reg_params_revision AS RegParamsRevision,
-               region_config_id AS RegionConfigId, adr_algorithm_id  AS AdrAlgorithmId,
-               uplink_interval AS UplinkInterval, device_status_req_interval AS DeviceStatusReqInternal,
-               supports_otaa AS SupportsOtaa, flush_queue_on_activate AS FlushQueueOnActivate,
+        SELECT id AS Id,
+               chirpstack_id AS ChirpStackId,
+               name AS Name,
+               region AS Region,
+               mac_version AS MacVersion,
+               reg_params_revision AS RegParamsRevision,
+               region_config_id AS RegionConfigId,
+               adr_algorithm_id AS AdrAlgorithmId,
+               uplink_interval AS UplinkInterval,
+               device_status_req_interval AS DeviceStatusReqInterval,
+               supports_otaa AS SupportsOtaa,
+               flush_queue_on_activate AS FlushQueueOnActivate,
                auto_detect_measurements AS AutoDetectMeasurements,
-               app_layer_params AS AppLayerParamsJson,
-               sync_status AS SyncStatus, sync_error AS SyncError, created_at AS CreatedAt
+               app_layer_params::text AS AppLayerParamsJson,
+               sync_status AS SyncStatus,
+               sync_error AS SyncError,
+               created_at AS CreatedAt
         FROM general.device_profiles
-    """;
+        """;
 
     public async Task<IEnumerable<DeviceProfileDto>> ListAsync()
     {
-        var rows = await db.QueryAsync(SelectBase + " ORDER BY name");
+        var rows = await db.QueryAsync<DeviceProfileRow>(SelectBase + " ORDER BY name");
         return rows.Select(MapRow);
     }
 
     public async Task<DeviceProfileDto?> GetAsync(Guid id)
     {
-        var row = await db.QuerySingleOrDefaultAsync(
+        var row = await db.QuerySingleOrDefaultAsync<DeviceProfileRow>(
             $"{SelectBase} WHERE id = @Id", new { Id = id });
         return row is null ? null : MapRow(row);
     }
@@ -41,7 +50,7 @@ public sealed class DeviceProfileService(
         var id = Guid.NewGuid();
         var appLayerJson = req.AppLayerParams is null
             ? null
-            : JsonSerializer.Serialize(req.AppLayerParams);
+            : JsonSerializer.Serialize(req.AppLayerParams, JsonOpts);
 
         await db.ExecuteAsync(
             """
@@ -112,7 +121,9 @@ public sealed class DeviceProfileService(
         if (existing.Id == Guid.Empty)
             return null;
 
-        var appLayerJson = req.AppLayerParams is null ? null : JsonSerializer.Serialize(req.AppLayerParams);
+        var appLayerJson = req.AppLayerParams is null
+            ? null
+            : JsonSerializer.Serialize(req.AppLayerParams, JsonOpts);
 
         await db.ExecuteAsync(
             """
@@ -219,7 +230,7 @@ public sealed class DeviceProfileService(
     {
         var count = 0;
 
-        var toSync = await db.QueryAsync(
+        var toSync = await db.QueryAsync<DeviceProfileRow>(
             $"{SelectBase} WHERE sync_status IN ('PENDING', 'FAILED')");
 
         foreach (var row in toSync)
@@ -228,7 +239,7 @@ public sealed class DeviceProfileService(
             var dto = MapRow(row);
             var req = ToRequest(dto);
 
-            if (dto.ChirpStackId is not null && await chirpstack.DeviceExistsAsync(dto.ChirpStackId.ToString(), ct))
+            if (dto.ChirpStackId is not null && await chirpstack.DeviceExistsAsync(dto.ChirpStackId.Value.ToString(), ct))
                 await TrySyncUpdateAsync(dto.Id, dto.ChirpStackId, req, ct);
             else
                 await TrySyncCreateAsync(dto.Id, req, ct);
@@ -256,19 +267,26 @@ public sealed class DeviceProfileService(
         r.SupportsOtaa, r.FlushQueueOnActivate, r.AutoDetectMeasurements,
         r.AppLayerParams?.Ts003FPort, r.AppLayerParams?.Ts004FPort, r.AppLayerParams?.Ts005FPort);
 
-    private static DeviceProfileDto MapRow(dynamic row)
+    private static DeviceProfileDto MapRow(DeviceProfileRow row)
     {
-        AppLayerParams? alp = row.applayerparamsjson is string s && !string.IsNullOrEmpty(s)
-            ? JsonSerializer.Deserialize<AppLayerParams>(s)
-            : null;
+        AppLayerParams? alp = string.IsNullOrEmpty(row.AppLayerParamsJson)
+            ? null
+            : JsonSerializer.Deserialize<AppLayerParams>(
+                row.AppLayerParamsJson,
+                JsonOpts);
 
         return new DeviceProfileDto(
-            row.id, row.chirpstackid, row.name, row.region, row.macversion,
-            row.regparamsrevision, row.regionconfigid, row.adralgorithmid,
-            row.uplinkinterval, row.devicestatusreqinternal, row.supportsotaa,
-            row.flushqueueonactivate, row.autodetectmeasurements, alp,
-            row.syncstatus, row.syncerror, row.createdat);
+            row.Id, row.ChirpStackId, row.Name, row.Region, row.MacVersion,
+            row.RegParamsRevision, row.RegionConfigId, row.AdrAlgorithmId,
+            row.UplinkInterval, row.DeviceStatusReqInterval, row.SupportsOtaa,
+            row.FlushQueueOnActivate, row.AutoDetectMeasurements, alp,
+            row.SyncStatus, row.SyncError, row.CreatedAt);
     }
+
+    private static readonly JsonSerializerOptions JsonOpts = new()
+    {
+        PropertyNameCaseInsensitive = true,
+    };
 
     private static CreateDeviceProfileRequest ToRequest(DeviceProfileDto d) => new(
         d.Name, d.Region, d.MacVersion, d.RegParamsRevision, d.RegionConfigId,

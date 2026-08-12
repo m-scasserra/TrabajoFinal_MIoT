@@ -190,7 +190,6 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
         {
             profile.RegionConfigId = d.RegionConfigId;
         }
-        /* TODO: Ver de regenerar los protos para que se pueda setear el AppLayerParams, sino hay que hacer un update de la libreria de chirpstack
         if (d.Ts003FPort.HasValue)
         {
             profile.AppLayerParams = new AppLayerParams
@@ -200,7 +199,6 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
                 Ts005FPort = (uint)(d.Ts005FPort ?? 0)
             };
         }
-        */
 
         var resp = await _deviceProfiles.CreateAsync(
             new CreateDeviceProfileRequest { DeviceProfile = profile }, _auth, cancellationToken: ct);
@@ -231,7 +229,6 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
         {
             profile.RegionConfigId = d.RegionConfigId;
         }
-        /* TODO: Ver de regenerar los protos para que se pueda setear el AppLayerParams, sino hay que hacer un update de la libreria de chirpstack
         if (d.Ts003FPort.HasValue)
         {
             profile.AppLayerParams = new AppLayerParams
@@ -241,7 +238,6 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
                 Ts005FPort = (uint)(d.Ts005FPort ?? 0)
             };
         }
-        */
 
         await _deviceProfiles.UpdateAsync(
             new UpdateDeviceProfileRequest { DeviceProfile = profile }, _auth, cancellationToken: ct);
