@@ -8,10 +8,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos/common/common.proto" GrpcServices="None" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/gw/gw.proto" GrpcServices="None" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/integration/integration.proto" GrpcServices="None" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/stream/*.proto" GrpcServices="None" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/google/api/*.proto" GrpcServices="None" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" />
+
+    <Protobuf Include="Protos/api/internal.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/user.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/tenant.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/application.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/device_profile.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/device.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/gateway.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/multicast_group.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/relay.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+    <Protobuf Include="Protos/api/fuota.proto" GrpcServices="Client" ProtoRoot="Protos" OutputDir="Chirpstack/" CompileOutputs="false" AdditionalImportDirs="/googleproto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
-    <PackageReference Include="Chirpstack.Api" Version="4.100.2" />
     <PackageReference Include="Dapper" Version="2.1.79" />
+    <PackageReference Include="Google.Protobuf" Version="3.35.1" />
     <PackageReference Include="Grpc.Net.Client" Version="2.83.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.83.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
     <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
