@@ -1,4 +1,11 @@
-import { Building2, Cpu, Bell, Users, type LucideIcon } from "lucide-react";
+import {
+  Building2,
+  Cpu,
+  Bell,
+  Users,
+  FileCog,
+  type LucideIcon,
+} from "lucide-react";
 import { Roles } from "@/features/users/roles";
 
 export interface NavSection {
@@ -15,6 +22,7 @@ export const navSections: NavSection[] = [
     icon: Building2,
     requiredRole: Roles.SuperAdmin,
   },
+  { to: "/device-profiles", label: "Device Profiles", icon: FileCog },
   { to: "/devices", label: "Devices", icon: Cpu },
   { to: "/alarms", label: "Alarms", icon: Bell },
   { to: "/users", label: "Users", icon: Users },

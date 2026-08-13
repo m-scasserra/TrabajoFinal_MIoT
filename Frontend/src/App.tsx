@@ -8,6 +8,7 @@ import { UsersListPage } from "./features/users/pages/UsersListPage";
 import { CreateUserPage } from "./features/users/pages/CreateUserPage";
 import { CreateOrganisationPage } from "./features/organisations/pages/CreateOrganisationPage";
 import { EditUserPage } from "./features/users/pages/EditUserPage";
+import { DeviceProfilesListPage } from "@/features/deviceProfiles/pages/DeviceProfilesListPage";
 //import { Layout } from "./components/Layout";
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/organisations" element={<div>Organisations</div>} />
           <Route path="/devices" element={<div>Devices</div>} />
           <Route path="/alarms" element={<div>Alarms</div>} />
+          <Route path="/device-profiles" element={<DeviceProfilesListPage />} />
           <Route path="/users/:id/edit" element={<EditUserPage />} />
         </Route>
       </Route>
