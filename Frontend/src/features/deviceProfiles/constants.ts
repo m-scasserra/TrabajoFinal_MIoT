@@ -17,7 +17,7 @@ export const REG_PARAMS_REVISIONS = [
   "RP002_1_0_4",
 ];
 
-export const DEFAULT_PROFILE_ROW = {
+export const DEFAULT_PROFILE_FORM = {
   name: "",
   region: "AU915",
   macVersion: "LORAWAN_1_0_4",
