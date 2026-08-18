@@ -30,25 +30,42 @@ public sealed class GatewayService(
                 $"{SelectBase} WHERE {notDeleted} ORDER BY created_at DESC");
 
         return await db.QueryAsync<GatewayDto>(
-            $"{SelectBase} WHERE {notDeleted} AND org_id = @OrgId ORDER BY created_at DESC",
+            $"""
+            {SelectBase}
+            WHERE {notDeleted} AND (org_id = @OrgId OR org_id IS NULL)
+            ORDER BY created_at DESC
+            """,
             new { OrgId = me.RequireOrgId() });
     }
 
     public async Task<GatewayDto?> GetByEuiAsync(CurrentUser me, string eui)
+    {
+        var whereOrg = me.IsSuperAdmin ? "" : " AND (org_id = @OrgId OR org_id IS NULL)";
+        return await db.QuerySingleOrDefaultAsync<GatewayDto>(
+            $"""
+            {SelectBase}
+            WHERE gateway_eui = @Eui
+            AND sync_status NOT IN ('PENDING_DELETE', 'DELETE_FAILED'){whereOrg}
+            """,
+            new { Eui = eui.ToLowerInvariant(), OrgId = me.OrgId });
+    }
+
+    public async Task<GatewayDto?> GetByEuiForWriteAsync(CurrentUser me, string eui)
     {
         var whereOrg = me.IsSuperAdmin ? "" : " AND org_id = @OrgId";
         return await db.QuerySingleOrDefaultAsync<GatewayDto>(
             $"""
             {SelectBase}
             WHERE gateway_eui = @Eui
-              AND sync_status NOT IN ('PENDING_DELETE', 'DELETE_FAILED'){whereOrg}
+            AND sync_status NOT IN ('PENDING_DELETE', 'DELETE_FAILED'){whereOrg}
             """,
             new { Eui = eui.ToLowerInvariant(), OrgId = me.OrgId });
     }
 
     public async Task<GatewayDto> CreateAsync(CurrentUser me, CreateGatewayRequest req, CancellationToken ct = default)
     {
-        var orgId = me.RequireOrgId();
+        Guid? orgId = me.IsSuperAdmin ? null : me.RequireOrgId();
+
         var eui = req.GatewayEui.ToLowerInvariant();
 
         var point = (req.Latitude.HasValue && req.Longitude.HasValue)
@@ -160,11 +177,17 @@ public sealed class GatewayService(
         return count;
     }
 
-    public async Task<GatewayDto?> UpdateAsync(
+    public async Task<GatewayUpdateResult> UpdateAsync(
         CurrentUser me, string eui, UpdateGatewayRequest req, CancellationToken ct = default)
     {
         eui = eui.ToLowerInvariant();
-        var whereOrg = me.IsSuperAdmin ? "" : " AND org_id = @OrgId";
+
+        var visible = await GetByEuiAsync(me, eui);
+        if (visible is null)
+            return GatewayUpdateResult.NotFound;
+
+        if (visible.OrgId is null && !me.IsSuperAdmin)
+            return GatewayUpdateResult.Forbidden;
 
         var point = (req.Latitude.HasValue && req.Longitude.HasValue)
             ? $"SRID=4326;POINT({req.Longitude} {req.Latitude})"
@@ -173,21 +196,17 @@ public sealed class GatewayService(
         var affected = await db.ExecuteAsync(
             $"""
             UPDATE general.gateways
-            SET alias = @Alias,
-                model = @Model,
+            SET alias = @Alias, model = @Model,
                 operative_state = @OperativeState::general.gateway_state,
                 coordinates = CASE WHEN @Point IS NULL THEN NULL ELSE ST_GeomFromEWKT(@Point) END,
                 sync_status = 'PENDING'
-            WHERE gateway_eui = @Eui{whereOrg};
+            WHERE gateway_eui = @Eui;
             """,
-            new { Alias = req.Alias, Model = req.Model, OperativeState = req.OperativeState, Point = point, Eui = eui, OrgId = me.OrgId });
-
-        if (affected == 0)
-            return null;
+            new { Alias = req.Alias, Model = req.Model, OperativeState = req.OperativeState, Point = point, Eui = eui });
 
         await TryUpdateGatewayAsync(eui, req.Alias, req.Latitude, req.Longitude, ct);
 
-        return await GetByEuiAsync(me, eui);
+        return GatewayUpdateResult.Ok(await GetByEuiAsync(me, eui));
     }
 
     private async Task TryUpdateGatewayAsync(
@@ -213,21 +232,24 @@ public sealed class GatewayService(
         }
     }
 
-    public async Task<bool> DeleteAsync(CurrentUser me, string eui, CancellationToken ct = default)
+    public async Task<GatewayDeleteResult> DeleteAsync(CurrentUser me, string eui, CancellationToken ct = default)
     {
         eui = eui.ToLowerInvariant();
-        var whereOrg = me.IsSuperAdmin ? "" : " AND org_id = @OrgId";
+
+        var visible = await GetByEuiAsync(me, eui);
+        if (visible is null)
+            return GatewayDeleteResult.NotFound;
+
+        if (visible.OrgId is null && !me.IsSuperAdmin)
+            return GatewayDeleteResult.Forbidden;
 
         var affected = await db.ExecuteAsync(
-            $"UPDATE general.gateways SET sync_status = 'PENDING_DELETE' WHERE gateway_eui = @Eui{whereOrg};",
-            new { Eui = eui, OrgId = me.OrgId });
-
-        if (affected == 0)
-            return false;
+            $"UPDATE general.gateways SET sync_status = 'PENDING_DELETE' WHERE gateway_eui = @Eui;",
+            new { Eui = eui });
 
         await TryDeleteGatewayAsync(eui, ct);
 
-        return true;
+        return GatewayDeleteResult.Ok;
     }
 
     private async Task TryDeleteGatewayAsync(

@@ -37,17 +37,29 @@ public static class GatewayEndpoints
         group.MapPut("/{eui}", async (
             string eui, UpdateGatewayRequest req, CurrentUser me, IGatewayService gw, CancellationToken ct) =>
         {
-            var updated = await gw.UpdateAsync(me, eui, req, ct);
-            return updated is null ? Results.NotFound() : Results.Ok(updated);
+            var result = await gw.UpdateAsync(me, eui, req, ct);
+            return result.Outcome switch
+            {
+                GatewayOutcome.Ok => Results.Ok(result.v),
+                GatewayOutcome.Forbidden => Results.Json(
+                    new { message = $"You do not have permission to update this gateway." },
+                    statusCode: StatusCodes.Status403Forbidden),
+                _ => Results.NotFound()
+            };
         });
 
         group.MapDelete("/{eui}", async (
             string eui, CurrentUser me, IGatewayService gw, CancellationToken ct) =>
         {
-            var ok = await gw.DeleteAsync(me, eui, ct);
-            return ok
-                ? Results.Ok(new { message = $"Gateway marked for deletion.", eui })
-                : Results.NotFound();
+            var result = await gw.DeleteAsync(me, eui, ct);
+            return result.Outcome switch
+            {
+                GatewayOutcome.Ok => Results.Ok(new { message = $"Gateway marked for deletion.", eui }),
+                GatewayOutcome.Forbidden => Results.Json(
+                    new { message = $"You do not have permission to delete this gateway." },
+                    statusCode: StatusCodes.Status403Forbidden),
+                _ => Results.NotFound()
+            };
         });
     }
 }
