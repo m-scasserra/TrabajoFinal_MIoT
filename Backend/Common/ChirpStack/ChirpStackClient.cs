@@ -85,7 +85,8 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
             GatewayId = gatewayEui.ToLowerInvariant(),
             Name = name,
             TenantId = _tenantId,
-            StatsInterval = 30
+            StatsInterval = 30,
+            DownlinkPriority = 10
         };
 
         if (lat.HasValue && lng.HasValue)
@@ -133,11 +134,14 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
     {
         try
         {
-            var resp = await _devices.GetAsync(
-                new GetDeviceRequest { DevEui = devEui.ToLowerInvariant() }, _auth, cancellationToken: ct);
+            var req = new GetDeviceRequest { DevEui = devEui.ToLowerInvariant() };
+            var resp = await _devices.GetAsync(req, _auth, cancellationToken: ct);
             return resp?.Device is not null;
         }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.NotFound)
+        catch (RpcException ex) when (
+            ex.StatusCode == StatusCode.NotFound ||
+            ex.StatusCode == StatusCode.Unauthenticated ||
+            ex.StatusCode == StatusCode.PermissionDenied)
         {
             return false;
         }
@@ -171,13 +175,24 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
 
     public async Task<string> CreateDeviceProfileAsync(DeviceProfileData d, CancellationToken ct = default)
     {
+        try
+        {
+            ProtoEnumMapper<Region>.FromOriginalName(d.Region);
+            ProtoEnumMapper<MacVersion>.FromOriginalName(d.MacVersion);
+            ProtoEnumMapper<RegParamsRevision>.FromOriginalName(d.RegParamsRevision);
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException("Invalid enum value", ex);
+        }
+
         var profile = new DeviceProfile
         {
             TenantId = _tenantId,
             Name = d.Name,
-            Region = Enum.Parse<Region>(d.Region),
-            MacVersion = Enum.Parse<MacVersion>(d.MacVersion),
-            RegParamsRevision = Enum.Parse<RegParamsRevision>(d.RegParamsRevision),
+            Region = ProtoEnumMapper<Region>.FromOriginalName(d.Region),
+            MacVersion = ProtoEnumMapper<MacVersion>.FromOriginalName(d.MacVersion),
+            RegParamsRevision = ProtoEnumMapper<RegParamsRevision>.FromOriginalName(d.RegParamsRevision),
             AdrAlgorithmId = d.AdrAlgorithmId,
             UplinkInterval = (uint)d.UplinkInterval,
             DeviceStatusReqInterval = (uint)d.DeviceStatusReqInterval,
@@ -209,14 +224,25 @@ public sealed class ChirpStackClient : IChirpStackClient, IDisposable
     public async Task UpdateDeviceProfileAsync(
         string chirpstackId, DeviceProfileData d, CancellationToken ct = default)
     {
+        try
+        {
+            ProtoEnumMapper<Region>.FromOriginalName(d.Region);
+            ProtoEnumMapper<MacVersion>.FromOriginalName(d.MacVersion);
+            ProtoEnumMapper<RegParamsRevision>.FromOriginalName(d.RegParamsRevision);
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException("Invalid enum value", ex);
+        }
+
         var profile = new DeviceProfile
         {
             Id = chirpstackId,
             TenantId = _tenantId,
             Name = d.Name,
-            Region = Enum.Parse<Region>(d.Region),
-            MacVersion = Enum.Parse<MacVersion>(d.MacVersion),
-            RegParamsRevision = Enum.Parse<RegParamsRevision>(d.RegParamsRevision),
+            Region = ProtoEnumMapper<Region>.FromOriginalName(d.Region),
+            MacVersion = ProtoEnumMapper<MacVersion>.FromOriginalName(d.MacVersion),
+            RegParamsRevision = ProtoEnumMapper<RegParamsRevision>.FromOriginalName(d.RegParamsRevision),
             AdrAlgorithmId = d.AdrAlgorithmId,
             UplinkInterval = (uint)d.UplinkInterval,
             DeviceStatusReqInterval = (uint)d.DeviceStatusReqInterval,
