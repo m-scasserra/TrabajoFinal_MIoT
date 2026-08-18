@@ -10,7 +10,16 @@ import { CreateOrganisationPage } from "./features/organisations/pages/CreateOrg
 import { EditUserPage } from "./features/users/pages/EditUserPage";
 import { DeviceProfilesListPage } from "@/features/deviceProfiles/pages/DeviceProfilesListPage";
 import { CreateDeviceProfilePage } from "@/features/deviceProfiles/pages/CreateDeviceProfilePage";
-//import { Layout } from "./components/Layout";
+import { EditDeviceProfilePage } from "@/features/deviceProfiles/pages/EditDeviceProfilePage";
+import { GatewayListPage } from "./features/gateways/pages/GatewayListPage";
+import { CreateGatewayPage } from "./features/gateways/pages/CreateGatewayPage";
+import { EditGatewayPage } from "./features/gateways/pages/EditGatewayPage";
+import { NodesListPage } from "./features/nodes/pages/NodesListPage";
+import { ActivateNodePage } from "./features/nodes/pages/ActivateNodePage";
+import { NodeDetailPage } from "./features/nodes/pages/NodeDetailPage";
+import { ProvisioningListPage } from "./features/nodes/pages/ProvisioningListPage";
+import { EditProvisioningPage } from "./features/nodes/pages/EditProvisioningPage";
+import { ProvisionNodePage } from "./features/nodes/pages/ProvisionNodePage";
 
 export default function App() {
   return (
@@ -27,21 +36,48 @@ export default function App() {
           }
         >
           <Route path="/" element={<div>Home</div>} />
+          {/* User paths */}
           <Route path="/users" element={<UsersListPage />} />
           <Route path="/users/new" element={<CreateUserPage />} />
+          {/* Organisation paths */}
           <Route
             path="/organisations/new"
             element={<CreateOrganisationPage />}
           />
           <Route path="/organisations" element={<div>Organisations</div>} />
-          <Route path="/devices" element={<div>Devices</div>} />
+
           <Route path="/alarms" element={<div>Alarms</div>} />
+          {/* Device profile paths */}
           <Route path="/device-profiles" element={<DeviceProfilesListPage />} />
           <Route
             path="/device-profiles/new"
             element={<CreateDeviceProfilePage />}
           />
+          <Route
+            path="/device-profiles/:id/edit"
+            element={<EditDeviceProfilePage />}
+          />
           <Route path="/users/:id/edit" element={<EditUserPage />} />
+          {/* Gateway paths */}
+          <Route path="/gateways" element={<GatewayListPage />} />
+          <Route path="/gateways/new" element={<CreateGatewayPage />} />
+          <Route path="/gateways/:eui/edit" element={<EditGatewayPage />} />
+          {/* Node paths */}
+          <Route path="/nodes" element={<NodesListPage />} />
+          <Route path="/nodes/activate" element={<ActivateNodePage />} />
+          <Route path="/nodes/:devEui" element={<NodeDetailPage />} />
+          <Route
+            path="/provisioning/nodes/:id/edit"
+            element={<EditProvisioningPage />}
+          />
+          <Route
+            path="/provisioning/nodes/new"
+            element={<ProvisionNodePage />}
+          />
+          <Route
+            path="/provisioning/nodes"
+            element={<ProvisioningListPage />}
+          />
         </Route>
       </Route>
     </Routes>
