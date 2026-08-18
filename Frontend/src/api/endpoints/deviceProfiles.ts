@@ -1,11 +1,5 @@
 import { apiFetch } from "../client";
-
-export type SyncStatus =
-  | "PENDING"
-  | "SYNCED"
-  | "FAILED"
-  | "PENDING_DELETE"
-  | "DELETE_FAILED";
+import type { SyncStatus } from "../types";
 
 export interface AppLayerParams {
   ts003FPort?: number;
