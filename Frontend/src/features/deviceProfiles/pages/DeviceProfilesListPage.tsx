@@ -75,7 +75,7 @@ export function DeviceProfilesListPage() {
                 {isSuperAdmin && (
                   <TableCell className="text-right">
                     <Button asChild variant="ghost" size="sm">
-                      <Link to={`/device-profiles/${p.id}`}>Edit</Link>
+                      <Link to={`/device-profiles/${p.id}/edit`}>Edit</Link>
                     </Button>
                   </TableCell>
                 )}
