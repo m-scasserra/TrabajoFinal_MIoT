@@ -86,5 +86,8 @@ public static class NodeEndpoints
                 return Results.BadRequest(new { message = ex.Message });
             }
         });
+
+        provGroup.MapGet("/", async (INodeService nodes) =>
+            Results.Ok(await nodes.ListProvisionedAsync()));
     }
 }

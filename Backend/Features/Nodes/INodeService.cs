@@ -13,4 +13,5 @@ public interface INodeService
     Task<ProvisionNodeResponse> ProvisionAsync(ProvisionNodeRequest req);
     Task<NodeDto?> UpdateProvisionAsync(Guid id, UpdateProvisionRequest req);
     Task<string> RotateAppKeyAsync(Guid id);
+    Task<IEnumerable<NodeDto>> ListProvisionedAsync();
 }

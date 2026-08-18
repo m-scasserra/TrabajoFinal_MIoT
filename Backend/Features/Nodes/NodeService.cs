@@ -29,21 +29,27 @@ public sealed class NodeService(
         """;
     public async Task<IEnumerable<NodeDto>> ListAsync(CurrentUser me)
     {
+        IEnumerable<NodeRow> rows;
         if (me.IsSuperAdmin)
-            return await db.QueryAsync<NodeDto>(
+            rows = await db.QueryAsync<NodeRow>(
                 $"{SelectBase} WHERE org_id IS NOT NULL ORDER BY created_at DESC");
 
-        return await db.QueryAsync<NodeDto>(
+        else
+            rows = await db.QueryAsync<NodeRow>(
                 $"{SelectBase} WHERE org_id = @OrgId ORDER BY created_at DESC",
                 new { OrgId = me.RequireOrgId() });
+
+        return rows.Select(MapRow);
     }
 
     public async Task<NodeDto?> GetByEuiAsync(CurrentUser me, string devEui)
     {
+
         var whereOrg = me.IsSuperAdmin ? "" : " AND org_id = @OrgId";
-        return await db.QuerySingleOrDefaultAsync<NodeDto>(
+        var row = await db.QuerySingleOrDefaultAsync<NodeRow>(
                 $"{SelectBase} WHERE dev_eui = @Eui{whereOrg}",
                 new { Eui = devEui.ToLowerInvariant(), OrgId = me.OrgId });
+        return row is null ? null : MapRow(row);
     }
 
     public async Task<NodeDto> ActivateAsync(CurrentUser me, ActivateNodeRequest req, CancellationToken ct = default)
@@ -53,7 +59,7 @@ public sealed class NodeService(
 
         var provisioned = await db.QuerySingleOrDefaultAsync<(Guid Id, string DevEui, byte[] AppKeyEnc)>(
             """
-            SELECT id AS Id, dev_eui AS DevEui, app_key_encripted AS AppKeyEnc
+            SELECT id AS Id, dev_eui AS DevEui, app_key_encrypted AS AppKeyEnc
             FROM general.nodes
             WHERE mac_address = @Mac and org_id IS NULL
             """,
@@ -97,12 +103,12 @@ public sealed class NodeService(
     }
 
     private async Task TrySyncNodeAsync(
-        Guid id, string devEui, string alias, string deviceProfileId,
-        byte[] appKeyEncripted, CancellationToken ct)
+        Guid id, string devEui, string alias, Guid deviceProfileId,
+        byte[] appKeyEncrypted, CancellationToken ct)
     {
         try
         {
-            var appKeyHex = cipher.Decrypt(appKeyEncripted);
+            var appKeyHex = cipher.Decrypt(appKeyEncrypted);
 
             var chirpstackProfileId = await db.QuerySingleOrDefaultAsync<Guid?>(
                 "SELECT chirpstack_id FROM general.device_profiles WHERE id = @Id;",
@@ -162,7 +168,7 @@ public sealed class NodeService(
 
             await db.ExecuteAsync(
                 """
-                UPDATE genera.nodes
+                UPDATE general.nodes
                 SET org_id = NULL, alias = '', meter_type = NULL, freq_minutes = NULL,
                     device_profile_id = NULL, coordinates = NULL,
                     operative_state = 'INACTIVE', sync_status = 'PENDING',
@@ -187,10 +193,10 @@ public sealed class NodeService(
     {
         var count = 0;
 
-        var toSync = await db.QueryAsync<(Guid Id, string DevEui, string Alias, string ProfileId, byte[] AppKeyEnc)>(
+        var toSync = await db.QueryAsync<(Guid Id, string DevEui, string Alias, Guid ProfileId, byte[] AppKeyEnc)>(
             """
             SELECT id as Id, dev_eui as DevEui, alias AS Alias,
-                   device_profile_id AS ProfileId, app_key_encripted AS AppKeyEnc
+                   device_profile_id AS ProfileId, app_key_encrypted AS AppKeyEnc
             FROM general.nodes
             WHERE org_id IS NOT NULL AND sync_status in ('PENDING', 'FAILED');
             """);
@@ -244,7 +250,7 @@ public sealed class NodeService(
             id = await db.ExecuteScalarAsync<Guid>(
                 """
                 INSERT INTO general.nodes
-                    (dev_eui, mac_address, hw_revision, fw_revision, app_key_encripted, alias)
+                    (dev_eui, mac_address, hw_revision, fw_revision, app_key_encrypted, alias)
                 VALUES
                     (@DevEui, @Mac, @HwRev, @FwRev, @AppKeyEnc, '')
                 RETURNING id;
@@ -313,9 +319,22 @@ public sealed class NodeService(
         var appKeyEncrypted = cipher.Encrypt(appKeyHex);
 
         await db.ExecuteAsync(
-            "UPDATE general.nodes SET app_key_encripted = @Enc WHERE id = @Id;",
+            "UPDATE general.nodes SET app_key_encrypted = @Enc WHERE id = @Id;",
             new { Enc = appKeyEncrypted, Id = id });
 
         return appKeyHex;
     }
+
+    public async Task<IEnumerable<NodeDto>> ListProvisionedAsync()
+    {
+        var rows = await db.QueryAsync<NodeRow>(
+               $"{SelectBase} WHERE org_id IS NULL ORDER BY created_at DESC");
+        return rows.Select(MapRow);
+    }
+
+    private static NodeDto MapRow(NodeRow r) => new(
+        r.Id, r.DevEui, r.MacAddress, r.OrgId, r.Alias, r.MeterType,
+        r.OperativeState, r.SyncStatus, r.SyncError, r.HwRevision,
+        r.FwRevision, r.Latitude, r.Longitude, r.CreatedAt
+    );
 }
