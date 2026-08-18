@@ -169,7 +169,7 @@ public sealed class DeviceProfileService(
 
             await chirpstack.UpdateDeviceProfileAsync(chirpstackId.Value.ToString(), ToData(req), ct);
             await db.ExecuteAsync(
-                "UPDATE general.device_profiles SET sync_status = 'SYNCEd', sync_error = NULL WHERE id = @Id",
+                "UPDATE general.device_profiles SET sync_status = 'SYNCED', sync_error = NULL WHERE id = @Id",
                 new { Id = id });
             logger.LogInformation("Device profile {Id} updated successfully in ChirpStack.", id);
         }
@@ -239,7 +239,7 @@ public sealed class DeviceProfileService(
             var dto = MapRow(row);
             var req = ToRequest(dto);
 
-            if (dto.ChirpStackId is not null && await chirpstack.DeviceExistsAsync(dto.ChirpStackId.Value.ToString(), ct))
+            if (dto.ChirpStackId is not null && await chirpstack.DeviceProfileExistsAsync(dto.ChirpStackId.Value.ToString(), ct))
                 await TrySyncUpdateAsync(dto.Id, dto.ChirpStackId, req, ct);
             else
                 await TrySyncCreateAsync(dto.Id, req, ct);
