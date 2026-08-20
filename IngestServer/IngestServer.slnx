@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Ingest.Application/Ingest.Application.csproj" />
+    <Project Path="src/Ingest.Core/Ingest.Core.csproj" />
+    <Project Path="src/Ingest.Host/Ingest.Host.csproj" />
+    <Project Path="src/Ingest.Infrastructure/Ingest.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Ingest.Application.Tests/Ingest.Application.Tests.csproj" />
+    <Project Path="tests/Ingest.Core.Tests/Ingest.Core.Tests.csproj" />
+  </Folder>
+</Solution>

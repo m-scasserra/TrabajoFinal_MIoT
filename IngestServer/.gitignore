@@ -1,0 +1,6 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# VS Code (opcional, podés incluirlo si trabajan en equipo)
+# .vscode/

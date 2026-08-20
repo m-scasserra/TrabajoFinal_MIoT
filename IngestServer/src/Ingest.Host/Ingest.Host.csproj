@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Ingest.Host-7ae90556-427b-482f-ba13-ef5c03a90d53</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ingest.Application\Ingest.Application.csproj" />
+    <ProjectReference Include="..\Ingest.Infrastructure\Ingest.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
