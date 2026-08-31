@@ -15,7 +15,6 @@ public readonly record struct PhaseMask(byte Raw)
     public int ActivePhaseCount =>
         (HasL1 ? 1 : 0) + (HasL2 ? 1 : 0) + (HasL3 ? 1 : 0);
 
-
     public IEnumerable<PhaseTag> ActivePhases()
     {
         if (HasL1) yield return PhaseTag.L1;
