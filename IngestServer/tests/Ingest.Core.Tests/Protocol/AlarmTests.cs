@@ -34,9 +34,14 @@ public class AlarmTests
 
     [Theory]
     [InlineData(0x01, AlarmEventCode.Overvoltage)]
-    [InlineData(0x02, AlarmEventCode.Overcurrent)]
-    [InlineData(0x03, AlarmEventCode.PowerOutage)]
-    [InlineData(0x04, AlarmEventCode.PowerRestored)]
+    [InlineData(0x02, AlarmEventCode.Undervoltage)]
+    [InlineData(0x03, AlarmEventCode.Overcurrent)]
+    [InlineData(0x04, AlarmEventCode.Undercurrent)]
+    [InlineData(0x05, AlarmEventCode.Overpower)]
+    [InlineData(0x06, AlarmEventCode.Underpower)]
+    [InlineData(0x07, AlarmEventCode.PowerOutage)]
+    [InlineData(0x08, AlarmEventCode.PowerRestored)]
+    [InlineData(0x09, AlarmEventCode.NoCommunication)]
     public void Decode_MapsEventCodes(byte raw, AlarmEventCode expected)
     {
         byte[] payload = [0x13, 0x04, 0x00, 0x00, raw, 0x00, 0x00, 0x00];
@@ -91,5 +96,19 @@ public class AlarmTests
 
         Assert.Equal(PhaseTag.Unknown, alarm.Phase);
         Assert.Equal(0x09, alarm.RawPhase);
+    }
+
+    [Fact]
+    public void Vector_NoCommunication_LossOfModbusDevice()
+    {
+        byte[] payload = [0x13, 0x04, 0x00, 0x00, 0x09, 0x00, 0x00, 0x01];
+
+        var reader = new PayloadReader(payload);
+        var header = Header.Parse(ref reader);
+        var alarm = Alarm.Decode(ref reader);
+
+        Assert.Equal(AlarmEventCode.NoCommunication, alarm.Event);
+        Assert.Equal(PhaseTag.General, alarm.Phase);
+        Assert.Equal(1, alarm.Value);
     }
 }

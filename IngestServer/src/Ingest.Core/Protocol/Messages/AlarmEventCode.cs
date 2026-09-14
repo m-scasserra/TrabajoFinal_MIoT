@@ -3,9 +3,14 @@ namespace Ingest.Core.Protocol.Messages;
 public enum AlarmEventCode : byte
 {
     Overvoltage = 0x01,
-    Overcurrent = 0x02,
-    PowerOutage = 0x03,
-    PowerRestored = 0x04,
+    Undervoltage = 0x02,
+    Overcurrent = 0x03,
+    Undercurrent = 0x04,
+    Overpower = 0x05,
+    Underpower = 0x06,
+    PowerOutage = 0x07,
+    PowerRestored = 0x08,
+    NoCommunication = 0x09,
     Unknown = 0xFF
 }
 
